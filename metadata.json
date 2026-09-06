@@ -1,0 +1,6 @@
+{
+  "name": "qatar-domains.com",
+  "description": "qatar-domains.com - بوابتك لامتلاك أصول رقمية نادرة ونطاقات قطرية وعالمية مميزة معروضة للبيع",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
