@@ -10,12 +10,25 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const distPath = path.resolve(__dirname, 'dist');
 
+app.use(express.json());
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     app: 'Qatar Domains',
     timestamp: new Date().toISOString(),
+  });
+});
+
+// Offer submission endpoint
+app.post('/api/send-offer', (req, res) => {
+  const offer = req.body;
+  console.log('[Qatar Domains] New Domain Offer Received:', offer);
+  res.json({
+    success: true,
+    message: 'Offer logged successfully',
+    receivedAt: new Date().toISOString(),
   });
 });
 
