@@ -4,7 +4,6 @@ import {
   ChevronRight,
   Pause,
   Play,
-  Sparkles,
 } from 'lucide-react';
 import { DomainItem, Language } from '../types';
 import { DomainCard } from './DomainCard';
@@ -112,20 +111,15 @@ export const DomainSlider: React.FC<DomainSliderProps> = ({
     >
       {/* Slider Header */}
       <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#8A1538] text-white shadow-xs">
-            <Sparkles className="h-4 w-4" />
-          </span>
-          <div>
-            <h3 className="font-display text-lg sm:text-xl font-black tracking-tight text-slate-900">
-              {isAr ? 'نطاقات مميزة معروضة للبيع (عرض متحرك)' : 'Featured Qatar Domains (Showcase Slider)'}
-            </h3>
-            <p className="text-xs text-slate-500 font-medium">
-              {isAr
-                ? 'تصفح النطاقات وقدم عرضك فوراً على النطاق المناسب لمشروعك'
-                : 'Browse all domains and submit your direct acquisition offer'}
-            </p>
-          </div>
+        <div>
+          <h3 className="font-display text-lg sm:text-xl font-black tracking-tight text-slate-900">
+            {isAr ? 'نطاقات مميزة معروضة للبيع' : 'Featured Domains for Sale'}
+          </h3>
+          <p className="text-xs text-slate-500 font-medium">
+            {isAr
+              ? 'تصفح النطاقات وقدم عرضك فوراً على النطاق المناسب لمشروعك'
+              : 'Browse all domains and submit your direct acquisition offer'}
+          </p>
         </div>
 
         {/* Controls: Prev / Next + Autoplay toggle */}

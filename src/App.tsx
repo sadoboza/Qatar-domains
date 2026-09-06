@@ -95,16 +95,30 @@ export default function App() {
         {/* Hero Section: Clean & Focused without redundant contact buttons */}
         <section className="relative overflow-hidden bg-white py-10 sm:py-14 border-b border-slate-200/80">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+            {/* Playful Bubble Badge */}
+            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-rose-500/20 bg-rose-500/5 px-3.5 py-1.5 shadow-2xs hover:scale-105 transition-transform duration-200">
+              <span className="h-2 w-2 rounded-full bg-[#8A1538] animate-pulse" />
+              <span
+                dir="ltr"
+                className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-gradient-to-r from-rose-600 via-[#8A1538] to-amber-500 text-white font-display text-xs font-black shadow-xs"
+              >
+                Qatar Domains
+              </span>
+              <span className="text-xs font-semibold text-slate-500 border-s border-slate-300 ps-2.5">
+                {t.heroBadge}
+              </span>
+            </div>
+
             {/* Main Platform Title */}
             <div className="inline-block">
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight sm:leading-tight">
                 {isAr ? (
                   <>
-                    منصة النطاقات <span className="text-[#560018]">القطرية والعالمية والمتميزة</span>
+                    منصة النطاقات <span className="text-[#8A1538]">الدولية والحصرية</span>
                   </>
                 ) : (
                   <>
-                    Qatar & Global <span className="text-[#560018]">Premium Domains Platform</span>
+                    International & Exclusive <span className="text-[#8A1538]">Domains Platform</span>
                   </>
                 )}
               </h1>

@@ -11,6 +11,14 @@ import evcEnergyImg from '../assets/images/daylight_evc_energy_1788625524889.jpg
 import parkingCompanyImg from '../assets/images/daylight_smart_parking_1788625552527.jpg';
 import dexpreludeFintechImg from '../assets/images/daylight_dex_fintech_1788625565760.jpg';
 import chatrekImg from '../assets/images/daylight_chatrek_ai_1788627872971.jpg';
+import swapRangeImg from '../assets/images/swap_range_fintech_1788705323951.jpg';
+import clipDiskImg from '../assets/images/clip_disk_media_1788705340926.jpg';
+import dexllImg from '../assets/images/dexll_exchange_tech_1788705355906.jpg';
+import eramoraImg from '../assets/images/eramora_luxury_brand_1788705990378.jpg';
+import zaluzaImg from '../assets/images/zaluza_brand_tech_1788706004207.jpg';
+import igbtAiImg from '../assets/images/igbt_semiconductor_ai_1788706018678.jpg';
+import sevencsAiImg from '../assets/images/sevencs_cognitive_ai_1788706032187.jpg';
+import buyLeezImg from '../assets/images/buyleez_marketplace_1788706049781.jpg';
 
 export const PORTFOLIO_DOMAINS: DomainItem[] = [
   // SECTION 1: Clean Energy & Future Tech
@@ -547,6 +555,358 @@ export const PORTFOLIO_DOMAINS: DomainItem[] = [
     statusAr: 'متاح - قدم عرضاً',
     registry: 'Verisign (.COM Registry)',
     atomUrl: 'https://domains.atom.com/lpd/name/chatrek.com',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'swaprange-com',
+    name: 'SwapRange.com',
+    tld: '.com',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'Elite brand for cryptocurrency swaps, DeFi range liquidity, forex exchange, and automated trading protocols.',
+      ar: 'علامة استثنائية لمنصات تبادل العملات الرقمية والسيولة اللامركزية وتداول الفوركس وبروتوكولات المبادلة الذكية.',
+    },
+    imageUrl: swapRangeImg,
+    imageAlt: {
+      en: 'Fintech Liquidity Swap & Automated Trading Platform',
+      ar: 'منصة تبادل العملات والسيولة والتقنيات المالية الذكية',
+    },
+    highlights: {
+      en: [
+        'Dynamic combination of "Swap" (Token/Currency Exchange) + "Range" (Liquidity Range & Market Scope)',
+        'Ideal for decentralized exchanges (DEX), AMM liquidity pool providers, and Web3 swap aggregators',
+        'Authoritative and instantly memorable .COM domain for global fintech and crypto trading platforms',
+        'Clean phonetic structure conveying speed, breadth, and precision in financial execution',
+      ],
+      ar: [
+        'دمج احترافي وقوي بين Swap (المبادلة والتبادل الرقمي) و Range (نطاق السيولة والمدى التداولي)',
+        'مثالي لمنصات التداول اللامركزي (DEX) ومزودي سيولة AMM وتطبيقات تجميع المبادلات المالية',
+        'امتداد .com عالمي فخم يمنح ثقة فورية للمستثمرين والمتداولين في قطاع التكنولوجيا المالية',
+        'اسم رنان وسهل الحفظ عالمياً يعكس الدقة والسرعة والمرونة في التعاملات المالية',
+      ],
+    },
+    characters: 9,
+    type: 'Fintech & Web3 .COM',
+    typeAr: 'تقنيات مالية ومبادلة عملات (.com)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Verisign (.COM Registry)',
+    atomUrl: 'https://www.atom.com/view/name/SwapRange.com',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'clipdisk-com',
+    name: 'ClipDisk.com',
+    tld: '.com',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'Premier digital brand for cloud clipboard syncing, high-speed video clipping, media storage, and creative studio asset archives.',
+      ar: 'علامة رقمية رائدة لتخزين ومزامنة الوسائط، قص ومونتاج مقاطع الفيديو السريعة، والتخزين السحابي الإبداعي.',
+    },
+    imageUrl: clipDiskImg,
+    imageAlt: {
+      en: 'Digital Media Storage & Video Clipping Technology',
+      ar: 'تخزين الوسائط الرقمية وتقنيات تحرير ومشاركة مقاطع الفيديو',
+    },
+    highlights: {
+      en: [
+        'Catchy and authoritative fusion of "Clip" (Video/Content Creation/Clipboard) + "Disk" (Storage/Drive/Archive)',
+        'Perfect for cloud storage platforms, video editing SaaS, viral content clip libraries, or cross-device clipboard sync tools',
+        'Short 8-letter two-word dictionary compound .COM domain with exceptional recall',
+        'Highly versatile across consumer tech, media production, streaming tools, and creative digital suites',
+      ],
+      ar: [
+        'دمج ذكي وجذاب بين Clip (المقاطع المصورة، المونتاج، والحافظة السحابية) و Disk (القرص، التخزين، والأرشفة)',
+        'مثالي لبرمجيات تحرير وقص مقاطع الفيديو، خدمات التخزين السحابي السريع، وتطبيقات مزامنة الحافظة بين الأجهزة',
+        'نطاق .com مكون من كلمتين إنجليزيتين شهيرتين بحفظ فوري ورنين تقني عصري',
+        'قابلية تسويقية وتجارية عالية في قطاعات صناعة المحتوى واستوديوهات الإنتاج الرقمي',
+      ],
+    },
+    characters: 8,
+    type: 'Digital Media & Cloud .COM',
+    typeAr: 'وسائط رقمية وتخزين سحابي (.com)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Verisign (.COM Registry)',
+    atomUrl: 'https://www.atom.com/view/name/ClipDisk.com',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'dexll-com',
+    name: 'Dexll.com',
+    tld: '.com',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'Ultra-rare 5-letter brandable .COM domain for decentralized exchanges (DEX), crypto derivatives, AI trading, and Web3 infrastructure.',
+      ar: 'نطاق خماسي فائق الندرة (.com) لمنصات التداول اللامركزي (DEX)، المشتقات الرقمية، التداول الذكي وبنية الويب 3.',
+    },
+    imageUrl: dexllImg,
+    imageAlt: {
+      en: 'Decentralized Finance Exchange & Blockchain Trading Nodes',
+      ar: 'منصات التداول اللامركزي الفائقة وشبكات البلوكشين',
+    },
+    highlights: {
+      en: [
+        'Ultra-compact 5-letter premium .COM brand featuring the industry-defining "DEX" acronym',
+        'High-value brandable asset for institutional DeFi protocols, orderbook exchanges, or blockchain layers',
+        'Symmetrical, crisp, and futuristic phonetic rhythm with frictionless global branding potential',
+        'Priceless memorability suitable for unicorn fintech ventures, automated liquidity networks, and crypto hedge funds',
+      ],
+      ar: [
+        'نطاق خماسي مقتضب ونادر جداً (.com) يبدأ بالمصطلح المالي العالمي الأبرز DEX (منصة التداول اللامركزية)',
+        'أصل رقمي استراتيجي للبروتوكولات المالية، منصات دفتر الأوامر اللامركزية، وشبكات البلوكشين المتقدمة',
+        'سهولة استثنائية في النطق والكتابة مع طابع تكنولوجي مستقبلي يناسب الشركات المليارية (Unicorns)',
+        'مثالي كعلامة تجارية دولية لمحافظ العملات المشفرة، صناديق التحوط الرقمي، ومحركات السيولة السريعة',
+      ],
+    },
+    characters: 5,
+    type: '5-Letter Brandable .COM',
+    typeAr: 'علامة خماسية نادرة (.com)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Verisign (.COM Registry)',
+    atomUrl: 'https://www.atom.com/view/name/Dexll.com',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'eramora-com',
+    name: 'Eramora.com',
+    tld: '.com',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'Prestige global brand for haute couture fashion, luxury lifestyle, timeless hospitality, cosmetics, and architectural living.',
+      ar: 'علامة عالمية راقية للأزياء الفاخرة، أسلوب الحياة الرفيع، الضيافة الراقية ومستحضرات التجميل والتصميم المعماري.',
+    },
+    imageUrl: eramoraImg,
+    imageAlt: {
+      en: 'Prestige Luxury Lifestyle & Haute Couture Fashion Boutique',
+      ar: 'علامة تجارية فاخرة وأسلوب حياة راقٍ وأزياء عالمية',
+    },
+    highlights: {
+      en: [
+        'Poetic fusion of "Era" (Epoch / Generation) and "Mora" (Timeless Elegance & Beauty)',
+        'Perfect 7-letter brandable domain with high phonetic elegance and luxury prestige',
+        'Ideal for global fashion houses, boutique hospitality, premium fragrance lines, or luxury real estate',
+        'Top-tier .COM asset offering immediate trust and sophisticated brand resonance',
+      ],
+      ar: [
+        'توليفة ساحرة تجمع بين Era (الحقبة والعهد الجديد) و Mora (الأناقة والجمال الخالد)',
+        'نطاق سباعي الأحرف ناعم النطق ذو فخامة صوتية وجاذبية تسويقية استثنائية',
+        'مثالي لدور الأزياء العالمية، الفنادق والمنتجعات الفاخرة، العطور ومستحضرات التجميل، والتطوير العقاري الراقي',
+        'امتداد .com عالمي يمنح هيبة فورية ومكانة رفيعة في أذهان العملاء والمستثمرين',
+      ],
+    },
+    characters: 7,
+    type: 'Luxury & Lifestyle .COM',
+    typeAr: 'علامة فاخرة وأسلوب حياة (.com)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Verisign (.COM Registry)',
+    atomUrl: 'https://www.atom.com/view/name/Eramora.com',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'zaluza-com',
+    name: 'Zaluza.com',
+    tld: '.com',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'Electrifying 6-letter brandable .COM domain for global consumer tech, digital entertainment, travel booking, or fintech ecosystems.',
+      ar: 'نطاق سداسي عالمي فائق الجاذبية (.com) لمنصات التكنولوجيا الاستهلاكية، الترفيه الرقمي، السفر، أو التطبيقات المالية الحديثة.',
+    },
+    imageUrl: zaluzaImg,
+    imageAlt: {
+      en: 'Global Consumer Tech & Digital Lifestyle Platform',
+      ar: 'منصة تكنولوجيا استهلاكية وتطبيقات رقمية وسياحية عالمية',
+    },
+    highlights: {
+      en: [
+        'Ultra-clean 6-letter symmetrical CVCVCV structure with vibrant global appeal',
+        'Effortless pronunciation across all languages and cultures without spelling ambiguity',
+        'Highly versatile for consumer mobile apps, travel & tourism tech, gaming, or modern e-commerce',
+        'Premium .COM pedigree providing unmatched digital footprint and global marketability',
+      ],
+      ar: [
+        'بنية سداسية الأحرف متناسقة ومميزة (Zaluza) بإيقاع صوتي مفعم بالحيوية والانطلاق',
+        'سهولة مطلقة في النطق والتذكر بجميع اللغات دون أي لبس إملائي',
+        'متعدد الاستخدامات للشركات الناشئة، منصات السفر وحجوزات السياحة، الألعاب الإلكترونية، والتجارة الحديثة',
+        'امتداد .com ملكي يضمن انتشاراً رقمياً واسعاً وبناء علامة تجارية عالمية (Global Brand)',
+      ],
+    },
+    characters: 6,
+    type: '6-Letter Brandable .COM',
+    typeAr: 'علامة سداسية عالمية (.com)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Verisign (.COM Registry)',
+    atomUrl: 'https://www.atom.com/view/name/Zaluza.com',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'igbt-ai',
+    name: 'Igbt.ai',
+    tld: '.ai',
+    sectionId: 'ai',
+    subtext: {
+      en: 'Industry-defining acronym domain for AI-optimized Insulated-Gate Bipolar Transistors (IGBT), EV power inverters, smart grid power electronics, and silicon chip intelligence.',
+      ar: 'نطاق تخصصي استراتيجي يمثل الاختصار الصناعي العالمي لترانزستورات IGBT، محولات طاقة المركبات الكهربائية، والشرائح الذكية.',
+    },
+    imageUrl: igbtAiImg,
+    imageAlt: {
+      en: 'Silicon Power Semiconductor Microchip & AI Power Electronics',
+      ar: 'أشباه الموصلات المتقدمة وترانزستورات إلكترونيات الطاقة والذكاء الاصطناعي',
+    },
+    highlights: {
+      en: [
+        'Exact match industry acronym for IGBT (Insulated-Gate Bipolar Transistor), the core component of modern power electronics',
+        'Crucial for electric vehicle (EV) powertrains, solar & wind energy inverters, industrial automation, and smart grids',
+        'Supercharged with the booming .AI extension for next-generation AI chip design, thermal simulation, and intelligent power management',
+        'Rare 4-letter acronym domain with immense multi-billion dollar industrial and semiconductor relevance',
+      ],
+      ar: [
+        'تطابق تام ومباشر مع الاختصار الصناعي العالمي IGBT (Insulated-Gate Bipolar Transistor) العمود الفقري لإلكترونيات الطاقة الحديثة',
+        'المكون الأساسي لمحركات ومحولات السيارات الكهربائية (EVs)، محولات الطاقة الشمسية والرياح، والشبكات الذكية',
+        'مدمج بامتداد الذكاء الاصطناعي العالمي (.ai) لتطبيقات تصميم الرقائق الذكية ومحاكاة الطاقة وأنظمة التحكم المؤتمتة',
+        'أصل رقمي صناعي نادر من 4 أحرف يستهدف شركات أشباه الموصلات الكبرى وصناعة السيارات والطاقة المتجددة',
+      ],
+    },
+    characters: 4,
+    type: 'AI & Semiconductors (.AI)',
+    typeAr: 'أشباه الموصلات والذكاء الاصطناعي (.ai)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: '.AI Registry',
+    atomUrl: 'https://www.atom.com/view/name/Igbt.ai',
+    transferTimeline: {
+      en: 'Fast Registrar Push & Verified Escrow Transfer',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: '7cs-ai',
+    name: '7cs.ai',
+    tld: '.ai',
+    sectionId: 'ai',
+    subtext: {
+      en: 'Ultra-scarce 3-character .AI domain symbolizing the classic "7 Cs" principles (Communication, Cognitive AI, Consulting, Cybersecurity, and Cloud).',
+      ar: 'نطاق ثلاثي فائق الندرة (.ai) يجسد مبادئ الـ "7 Cs" الشهيرة في استراتيجيات التواصل والذكاء المعرفي والأمن السحابي والاستشارات.',
+    },
+    imageUrl: sevencsAiImg,
+    imageAlt: {
+      en: 'Cognitive Artificial Intelligence Architecture & Neural Intelligence Nodes',
+      ar: 'بنية الذكاء الاصطناعي المعرفي والشبكات العصبية المتقدمة',
+    },
+    highlights: {
+      en: [
+        'Elite 3-character domain (Number + Letter + Letter) in the ultra-high demand .AI extension',
+        'Direct alignment with the universally taught "7 Cs" (Communication: Clear, Concise, Concrete, Correct, Coherent, Complete, Courteous)',
+        'Powerful brand for AI consulting, enterprise decision intelligence, cybersecurity, cognitive analytics, or ocean maritime tech (Seven Seas)',
+        'Priceless scarcity with extraordinary recall and instant corporate prestige',
+      ],
+      ar: [
+        'نطاق ثلاثي فخم ونادر جداً (رقم + حرفان) تحت الامتداد الأقوى عالمياً في قطاع الذكاء الاصطناعي (.ai)',
+        'تطابق رمزي شهير عالمياً مع مبادئ 7 Cs القيادية والتواصلية (الوضوح، الإيجاز، الدقة، التماسك، الاكتمال...)',
+        'هوية استراتيجية لشركات استشارات الذكاء الاصطناعي، ذكاء الأعمال المؤسسي، الأمن السيبراني، أو الملاحة والبحار السبعة (Seven Seas)',
+        'ندرة رقمية مطلقة وسهولة حفظ فائقة تمنح حضوراً مؤسسياً لا يُضاهى',
+      ],
+    },
+    characters: 3,
+    type: '3-Character Premium (.AI)',
+    typeAr: 'نطاق ثلاثي فائق الندرة (.ai)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: '.AI Registry',
+    atomUrl: 'https://www.atom.com/view/name/7cs.ai',
+    transferTimeline: {
+      en: 'Fast Registrar Push & Verified Escrow Transfer',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'buyleez-com',
+    name: 'BuyLeez.com',
+    tld: '.com',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'High-conversion marketplace brand for "Buy or Lease" platforms across electric vehicles, luxury real estate, electronics, and smart fintech financing.',
+      ar: 'علامة تجارية تسويقية لمنصات البيع والتأجير التمويلي الذكي (Buy or Lease / Buy with Ease) للسيارات والعقارات والتقنيات الحديثة.',
+    },
+    imageUrl: buyLeezImg,
+    imageAlt: {
+      en: 'Smart Digital Leasing & Commerce Marketplace Platform',
+      ar: 'منصة التجارة والتأجير التمويلي الذكي والحلول المالية الرقمية',
+    },
+    highlights: {
+      en: [
+        'Clever double phonetic play on "Buy or Lease" and "Buy with Ease" (Leez / Lease)',
+        'Tailor-made for automotive leasing, subscription commerce, luxury property rentals, and B2B equipment financing',
+        'High-energy call-to-action ("Buy") driving exceptional consumer trust and conversion rates',
+        'Premium 7-letter .COM with viral commercial potential and sticky brand recall',
+      ],
+      ar: [
+        'توليفة تسويقية ذكية تجمع بين خياري الشراء والتأجير (Buy or Lease) وسهولة الشراء (Buy with Ease)',
+        'مصمم خصيصاً لمنصات تمويل وتأجير السيارات، العقارات الفاخرة، المعدات التقنية، ونماذج الاشتراك التجاري',
+        'يبدأ بفعل الشراء المباشر Buy المحفز للمستهلكين مع طابع عصري ممتع وسريع الحفظ',
+        'امتداد .com تجاري جذاب يحقق أعلى معدلات التحويل للعملاء والمنصات التمويلية الرقمية',
+      ],
+    },
+    characters: 7,
+    type: 'E-Commerce & Leasing .COM',
+    typeAr: 'تجارة وتأجير رقمي ذكي (.com)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Verisign (.COM Registry)',
+    atomUrl: 'https://www.atom.com/view/name/BuyLeez.com',
     transferTimeline: {
       en: 'Fast Global Escrow & Registrar Push',
       ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
