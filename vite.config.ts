@@ -7,6 +7,8 @@ export default defineConfig(() => {
   return {
     base: './',
     build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
       chunkSizeWarningLimit: 1500,
     },
     plugins: [react(), tailwindcss()],
