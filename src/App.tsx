@@ -6,6 +6,8 @@ import {
   Globe,
   Sliders,
   Grid,
+  Building2,
+  Coins,
 } from 'lucide-react';
 import { DomainItem, Language } from './types';
 import { PORTFOLIO_DOMAINS, PORTFOLIO_SECTIONS } from './data/domains';
@@ -232,6 +234,10 @@ export default function App() {
                           ? Cpu
                           : section.id === 'healthcare'
                           ? HeartPulse
+                          : section.id === 'dubai-hub'
+                          ? Building2
+                          : section.id === 'fintech-web3'
+                          ? Coins
                           : Globe;
 
                       return (

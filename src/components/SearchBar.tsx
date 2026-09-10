@@ -27,9 +27,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const categories = [
     { id: 'all', labelEn: 'All Inventory', labelAr: 'كافة النطاقات' },
     { id: 'clean-energy', labelEn: 'Clean Energy & Hydrogen', labelAr: 'الطاقة النظيفة والهيدروجين' },
-    { id: 'ai', labelEn: 'AI & Smart Mobility', labelAr: 'الذكاء الاصطناعي والمواقف' },
+    { id: 'ai', labelEn: 'AI & Semiconductors', labelAr: 'الذكاء الاصطناعي وأشباه الموصلات' },
     { id: 'healthcare', labelEn: 'Healthcare & Biotech', labelAr: 'الرعاية الصحية' },
     { id: 'global-brands', labelEn: 'Global .COM & Media', labelAr: 'العلامات العالمية (.COM)' },
+    { id: 'dubai-hub', labelEn: 'Dubai & Regional Hub', labelAr: 'مشاريع دبي الإقليمية' },
+    { id: 'fintech-web3', labelEn: 'FinTech & Web3 Gaming', labelAr: 'الفنتك وألعاب الويب 3' },
   ];
 
   return (
