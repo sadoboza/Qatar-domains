@@ -47,35 +47,59 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
     const targetDomainName =
       selectedDomain === 'other'
-        ? customDomain.trim() || (isAr ? 'نطاق آخر / استفسار عام' : 'Other Domain')
+        ? customDomain.trim() || (isAr ? 'نطاق آخر / استفسار عام' : 'Other Domain / General Inquiry')
         : selectedDomain.trim() || (isAr ? 'استفسار عام' : 'General Inquiry');
 
-    // Pre-build WhatsApp direct confirmation URL
+    // Pre-build WhatsApp direct confirmation URL with appropriate language
     const waText = encodeURIComponent(
-      `السلام عليكم ورحمة الله،\n` +
-      `أود تقديم عرض شراء رسمي للنطاق:\n` +
-      `🌐 النطاق: ${targetDomainName}\n` +
-      `👤 الاسم: ${fullName}\n` +
-      `📧 البريد الإلكتروني: ${email}\n` +
-      `📱 الهاتف / واتساب: ${phone}\n` +
-      `💰 قيمة العرض المقترح: ${offerAmount}\n` +
-      (message ? `📝 ملاحظات إضافية: ${message}\n` : '') +
-      `\nمرسل عبر منصة Qatar Domains`
+      isAr
+        ? `السلام عليكم ورحمة الله،\n` +
+          `أود تقديم عرض شراء رسمي للنطاق:\n` +
+          `🌐 النطاق: ${targetDomainName}\n` +
+          `👤 الاسم: ${fullName}\n` +
+          `📧 البريد الإلكتروني: ${email}\n` +
+          `📱 الهاتف / واتساب: ${phone}\n` +
+          `💰 قيمة العرض المقترح: ${offerAmount}\n` +
+          (message ? `📝 ملاحظات إضافية: ${message}\n` : '') +
+          `\nمرسل عبر منصة Qatar Domains`
+        : `Hello,\n` +
+          `I would like to submit a formal acquisition offer for the domain:\n` +
+          `🌐 Domain: ${targetDomainName}\n` +
+          `👤 Name: ${fullName}\n` +
+          `📧 Email: ${email}\n` +
+          `📱 Phone / WhatsApp: ${phone}\n` +
+          `💰 Proposed Offer: ${offerAmount}\n` +
+          (message ? `📝 Additional Notes: ${message}\n` : '') +
+          `\nSent via Qatar Domains platform (https://qatar-domains.tech)`
     );
     const waUrl = `https://wa.me/${BROKERAGE_CONFIG.whatsappNumber}?text=${waText}`;
 
-    // Pre-build Mailto direct link
-    const mailSub = encodeURIComponent(`عرض شراء رسمي لنطاق: ${targetDomainName} - ${fullName}`);
+    // Pre-build Mailto direct link with appropriate language
+    const mailSub = encodeURIComponent(
+      isAr
+        ? `عرض شراء رسمي لنطاق: ${targetDomainName} - ${fullName}`
+        : `Formal Acquisition Offer for Domain: ${targetDomainName} - ${fullName}`
+    );
     const mailBody = encodeURIComponent(
-      `بيانات العرض الرسمي المقدم:\n` +
-      `========================\n` +
-      `النطاق المطلوب: ${targetDomainName}\n` +
-      `اسم المشتري / مقدم العرض: ${fullName}\n` +
-      `البريد الإلكتروني: ${email}\n` +
-      `رقم الهاتف / واتساب: ${phone}\n` +
-      `قيمة العرض المقترح: ${offerAmount}\n` +
-      `الملاحظات والرسالة: ${message || 'لا توجد'}\n\n` +
-      `مرسل عبر منصة: https://qatar-domains.tech`
+      isAr
+        ? `بيانات العرض الرسمي المقدم:\n` +
+          `========================\n` +
+          `النطاق المطلوب: ${targetDomainName}\n` +
+          `اسم المشتري / مقدم العرض: ${fullName}\n` +
+          `البريد الإلكتروني: ${email}\n` +
+          `رقم الهاتف / واتساب: ${phone}\n` +
+          `قيمة العرض المقترح: ${offerAmount}\n` +
+          `الملاحظات والرسالة: ${message || 'لا توجد'}\n\n` +
+          `مرسل عبر منصة: https://qatar-domains.tech`
+        : `Official Offer Details:\n` +
+          `========================\n` +
+          `Target Domain: ${targetDomainName}\n` +
+          `Buyer / Offeror: ${fullName}\n` +
+          `Email Address: ${email}\n` +
+          `Phone / WhatsApp: ${phone}\n` +
+          `Proposed Offer: ${offerAmount}\n` +
+          `Notes / Comments: ${message || 'None'}\n\n` +
+          `Sent via: https://qatar-domains.tech`
     );
     const mailUrl = `mailto:${BROKERAGE_CONFIG.email}?cc=sadoox911@gmail.com&subject=${mailSub}&body=${mailBody}`;
 
@@ -94,17 +118,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          _subject: `عرض شراء جديد لنطاق [${targetDomainName}] من ${fullName}`,
+          _subject: isAr
+            ? `عرض شراء جديد لنطاق [${targetDomainName}] من ${fullName}`
+            : `New Acquisition Offer for [${targetDomainName}] from ${fullName}`,
           _cc: 'sadoox911@gmail.com',
           _template: 'table',
           _captcha: 'false',
-          'النطاق المطلوب': targetDomainName,
-          'اسم مقدم العرض': fullName,
-          'البريد الإلكتروني': email,
-          'رقم الهاتف': phone,
-          'قيمة العرض المقترح': offerAmount,
-          'ملاحظات المشتري': message || 'لا توجد ملاحظات إضافية',
-          'تاريخ الإرسال': new Date().toLocaleString('ar-QA'),
+          'Target Domain / النطاق المطلوب': targetDomainName,
+          'Buyer Name / اسم المشتري': fullName,
+          'Email / البريد الإلكتروني': email,
+          'Phone / رقم الهاتف': phone,
+          'Proposed Offer / قيمة العرض': offerAmount,
+          'Notes / الملاحظات': message || (isAr ? 'لا توجد ملاحظات إضافية' : 'No additional notes'),
+          'Submission Date / تاريخ الإرسال': new Date().toLocaleString(isAr ? 'ar-QA' : 'en-US'),
         }),
       });
     } catch (err) {
@@ -137,7 +163,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#8A1538]/10 px-3 py-1 text-xs font-semibold text-[#8A1538]">
               <Tag className="h-3 w-3 text-[#8A1538]" />
-              <span>{isAr ? 'تقديم عرض مباشر' : 'Direct Offer'}</span>
+              <span>{t.contactSectionBadge}</span>
             </span>
             <h2 className="mt-3 font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
               {t.contactSectionTitle}
@@ -163,10 +189,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block">
-                  {isAr ? 'تواصل عبر واتساب' : 'WhatsApp'}
+                  {t.whatsAppCardTitle}
                 </span>
                 <span className="text-sm font-semibold text-slate-800">
-                  {isAr ? 'محادثة فورية لتقديم العرض' : 'Instant Chat to Present Offer'}
+                  {t.whatsAppCardSubtitle}
                 </span>
               </div>
             </a>
@@ -183,10 +209,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#8A1538] block">
-                  {isAr ? 'البريد الإلكتروني' : 'Official Email'}
+                  {t.emailCardTitle}
                 </span>
                 <span className="text-sm font-semibold text-slate-800">
-                  {isAr ? 'إرسال استفسار أو عرض رسمي' : 'Send Formal Inquiry or Offer'}
+                  {t.emailCardSubtitle}
                 </span>
               </div>
             </a>
@@ -206,7 +232,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-emerald-950">
-                    {isAr ? 'تم إرسال عرضك بنجاح!' : 'Your Offer Has Been Sent!'}
+                    {t.successTitle}
                   </h3>
                   <p className="mt-1 text-sm text-emerald-800 font-medium leading-relaxed">
                     {isAr
@@ -219,7 +245,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               {/* Instant WhatsApp & Email Action Shortcuts */}
               <div className="rounded-xl border border-emerald-200/80 bg-white p-4 space-y-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-600">
-                  {isAr ? 'للحصول على رد وتأكيد فوري:' : 'For Instant Confirmation:'}
+                  {t.instantConfirmTitle}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {submittedData?.waUrl && (
@@ -230,7 +256,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-emerald-700 transition-colors shadow-2xs"
                     >
                       <MessageSquare className="h-4 w-4" />
-                      <span>{isAr ? 'تأكيد العرض عبر واتساب' : 'Confirm via WhatsApp'}</span>
+                      <span>{t.confirmViaWhatsApp}</span>
                       <ExternalLink className="h-3 w-3 opacity-70" />
                     </a>
                   )}
@@ -241,7 +267,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                       className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-bold text-slate-800 hover:bg-slate-100 transition-colors"
                     >
                       <Mail className="h-4 w-4 text-[#8A1538]" />
-                      <span>{isAr ? 'فتح نسخة في بريدك' : 'Open in Email Client'}</span>
+                      <span>{t.openInEmail}</span>
                     </a>
                   )}
                 </div>
@@ -252,7 +278,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 onClick={handleResetForm}
                 className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
               >
-                {isAr ? 'تقديم عرض على نطاق آخر' : 'Submit Another Offer'}
+                {t.submitAnotherOffer}
               </button>
             </div>
           ) : (
@@ -310,7 +336,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                    {isAr ? 'النطاق المراد تقديم عرض عليه' : 'Target Domain'} *
+                    {t.targetDomainLabel} *
                   </label>
                   <select
                     value={selectedDomain}
@@ -320,26 +346,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
                   >
                     <option value="">
-                      {isAr ? '-- اختر النطاق / Select Domain --' : '-- Select Domain --'}
+                      {t.selectDomainOption}
                     </option>
 
                     {/* Section 1: Qatar National Domains (.qa) */}
-                    <optgroup label={isAr ? 'نطاقات دولة قطر (.qa)' : 'Qatar National Domains (.qa)'}>
+                    <optgroup label={t.groupQaDomains}>
                       {qaDomains.map((dom) => (
                         <option key={dom.id} value={dom.name}>
-                          {dom.name} {dom.typeAr ? `(${dom.typeAr})` : ''}
+                          {dom.name} {isAr && dom.typeAr ? `(${dom.typeAr})` : !isAr && dom.type ? `(${dom.type})` : ''}
                         </option>
                       ))}
                     </optgroup>
 
                     {/* Section 2: Global & Tech Domains (.com, .ai, .energy, .company) */}
-                    <optgroup
-                      label={
-                        isAr
-                          ? 'النطاقات العالمية والتكنولوجية (.COM / .AI / .ENERGY)'
-                          : 'Global & Tech Domains (.COM / .AI / .ENERGY)'
-                      }
-                    >
+                    <optgroup label={t.groupGlobalDomains}>
                       {globalDomains.map((dom) => (
                         <option key={dom.id} value={dom.name}>
                           {dom.name}
@@ -349,7 +369,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
                     {/* Section 3: Custom / General Inquiry */}
                     <option value="other">
-                      {isAr ? '➕ نطاق آخر / استفسار عام' : '➕ Other Domain / General Inquiry'}
+                      {t.otherDomainOption}
                     </option>
                   </select>
                 </div>
@@ -359,14 +379,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               {selectedDomain === 'other' && (
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                    {isAr ? 'اكتب اسم النطاق أو الموضوع المطلوب' : 'Specify Domain or Topic'} *
+                    {t.customDomainLabel} *
                   </label>
                   <input
                     type="text"
                     required
                     value={customDomain}
                     onChange={(e) => setCustomDomain(e.target.value)}
-                    placeholder="example.qa / domain.com"
+                    placeholder={t.customDomainPlaceholder}
                     dir="ltr"
                     className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
                   />
@@ -407,13 +427,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               >
                 <Send className="h-4 w-4" />
                 <span>
-                  {isSubmitting
-                    ? isAr
-                      ? 'جارٍ إرسال العرض إلى البريد الإلكتروني...'
-                      : 'Sending Offer to Email...'
-                    : isAr
-                    ? 'إرسال العرض'
-                    : 'Submit Offer'}
+                  {isSubmitting ? t.submitSending : t.submitInquiry}
                 </span>
               </button>
             </form>

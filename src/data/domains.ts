@@ -919,8 +919,8 @@ export const PORTFOLIO_SECTIONS: SectionData[] = [
     id: 'clean-energy',
     number: 1,
     title: {
-      en: 'SECTION 1: Clean Energy & Future Tech',
-      ar: 'القسم 1: الطاقة النظيفة والتكنولوجيا المستقبلية',
+      en: 'Clean Energy, Hydrogen & Future Tech',
+      ar: 'الطاقة النظيفة، الهيدروجين والتكنولوجيا المستقبلية',
     },
     subtitle: {
       en: 'Premium digital assets in green energy, hydrogen infrastructure, electric vehicles, and charging networks.',
@@ -932,8 +932,8 @@ export const PORTFOLIO_SECTIONS: SectionData[] = [
     id: 'ai',
     number: 2,
     title: {
-      en: 'SECTION 2: Artificial Intelligence & Smart Mobility',
-      ar: 'القسم 2: الذكاء الاصطناعي والمواقف والتنقل الذكي',
+      en: 'Artificial Intelligence, Smart Parking & Autonomous Mobility',
+      ar: 'الذكاء الاصطناعي والمواقف والتنقل الذكي',
     },
     subtitle: {
       en: 'High-value domain names commanding autonomous technology, smart parking infrastructure, and AI.',
@@ -945,8 +945,8 @@ export const PORTFOLIO_SECTIONS: SectionData[] = [
     id: 'healthcare',
     number: 3,
     title: {
-      en: 'SECTION 3: Healthcare & Biotech',
-      ar: 'القسم 3: الرعاية الصحية والتكنولوجيا الحيوية',
+      en: 'Healthcare, Biotech & Medical Innovation',
+      ar: 'الرعاية الصحية، التقنية الحيوية والابتكار الطبي',
     },
     subtitle: {
       en: 'Exclusive domain assets for medical, clinical, and healthcare projects.',
@@ -958,8 +958,8 @@ export const PORTFOLIO_SECTIONS: SectionData[] = [
     id: 'global-brands',
     number: 4,
     title: {
-      en: 'SECTION 4: Global Brands, Media & Web3 (.COM)',
-      ar: 'القسم 4: العلامات العالمية، الإعلام الرقمي والويب 3 (.COM)',
+      en: 'Global Brands, Media & Web3 (.COM)',
+      ar: 'العلامات العالمية، الإعلام الرقمي والويب 3 (.COM)',
     },
     subtitle: {
       en: 'Elite global .COM domains for digital media, entertainment storytelling, and decentralized finance.',

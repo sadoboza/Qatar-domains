@@ -3,6 +3,7 @@ import {
   Zap,
   Cpu,
   HeartPulse,
+  Globe,
   Sliders,
   Grid,
 } from 'lucide-react';
@@ -31,11 +32,12 @@ export default function App() {
   const t = getT(language);
   const isAr = language === 'ar';
 
-  // Synchronize document dir and lang attribute
+  // Synchronize document dir, lang attribute, and title
   useEffect(() => {
     document.documentElement.dir = isAr ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
-  }, [language, isAr]);
+    document.title = t.pageTitle;
+  }, [language, isAr, t.pageTitle]);
 
   // Filtered domains logic
   const filteredDomains = useMemo(() => {
@@ -152,7 +154,7 @@ export default function App() {
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-[#8A1538]" />
                 <span className="text-sm font-bold text-slate-800">
-                  {isAr ? 'معرض النطاقات الحصرية' : 'Exclusive Domain Showcase'}
+                  {t.showcaseHeading}
                 </span>
               </div>
 
@@ -166,10 +168,10 @@ export default function App() {
                       ? 'bg-[#8A1538] text-white shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
-                  title={isAr ? 'عرض سلايدر متحرك' : 'Slider View'}
+                  title={t.sliderTooltip}
                 >
                   <Sliders className="h-3.5 w-3.5" />
-                  <span>{isAr ? 'سلايدر متحرك' : 'Slider'}</span>
+                  <span>{t.viewModeSlider}</span>
                 </button>
 
                 <button
@@ -180,10 +182,10 @@ export default function App() {
                       ? 'bg-[#8A1538] text-white shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
-                  title={isAr ? 'عرض شبكة الأقسام' : 'Grid View'}
+                  title={t.gridTooltip}
                 >
                   <Grid className="h-3.5 w-3.5" />
-                  <span>{isAr ? 'شبكة الأقسام' : 'Grid'}</span>
+                  <span>{t.viewModeGrid}</span>
                 </button>
               </div>
             </div>
@@ -228,7 +230,9 @@ export default function App() {
                           ? Zap
                           : section.id === 'ai'
                           ? Cpu
-                          : HeartPulse;
+                          : section.id === 'healthcare'
+                          ? HeartPulse
+                          : Globe;
 
                       return (
                         <div

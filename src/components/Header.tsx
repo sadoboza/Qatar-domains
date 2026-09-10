@@ -69,28 +69,52 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
         </div>
 
-        {/* Controls: Doha Live Clock & Language Toggle */}
+        {/* Controls: Doha Live Clock & Simplified Language Switch */}
         <div className="flex items-center gap-2 sm:gap-3.5">
           {/* Live Qatar Clock (Dark Luxury Pill) */}
           <div className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 sm:px-4 py-1.5 text-xs font-semibold text-amber-300 shadow-[0_2px_10px_rgba(245,158,11,0.1)]">
             <Clock className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
-            <span className="hidden xs:inline text-amber-200/90">{isAr ? 'توقيت الدوحة:' : 'Doha:'}</span>
+            <span className="hidden xs:inline text-amber-200/90">{t.dohaTime}</span>
             <span dir="ltr" className="font-mono font-bold tracking-wider text-amber-300">
               {dohaTime || '12:00:00'}
             </span>
           </div>
 
-          {/* Language Toggle (Sleek Dark Glass) */}
-          <button
-            id="language-toggle-btn"
-            type="button"
-            onClick={() => onLanguageChange(language === 'en' ? 'ar' : 'en')}
-            className="flex items-center gap-1.5 rounded-xl border border-slate-700/80 bg-slate-900/90 px-3 py-1.5 text-xs font-bold text-slate-200 transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
-            title="Language"
+          {/* Simplified Segmented Language Switch (العربية | English) */}
+          <div
+            id="language-switch-container"
+            className="inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/95 p-0.5 sm:p-1 shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+            role="group"
+            aria-label="Language Selector"
           >
-            <Globe className="h-3.5 w-3.5 text-slate-400" />
-            <span>{t.langToggle}</span>
-          </button>
+            <button
+              id="lang-switch-ar"
+              type="button"
+              onClick={() => onLanguageChange('ar')}
+              className={`flex items-center gap-1 rounded-full px-2.5 sm:px-3 py-1 text-xs font-bold transition-all cursor-pointer select-none ${
+                language === 'ar'
+                  ? 'bg-gradient-to-r from-[#8A1538] to-[#560018] text-white shadow-xs'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+              aria-pressed={language === 'ar'}
+            >
+              <span>العربية</span>
+            </button>
+
+            <button
+              id="lang-switch-en"
+              type="button"
+              onClick={() => onLanguageChange('en')}
+              className={`flex items-center gap-1 rounded-full px-2.5 sm:px-3 py-1 text-xs font-bold transition-all cursor-pointer select-none font-sans ${
+                language === 'en'
+                  ? 'bg-gradient-to-r from-[#8A1538] to-[#560018] text-white shadow-xs'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+              aria-pressed={language === 'en'}
+            >
+              <span>English</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>
