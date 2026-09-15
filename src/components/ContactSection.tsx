@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MessageSquare, Send, CheckCircle, Tag, ExternalLink } from 'lucide-react';
+import { Mail, MessageSquare, Send, CheckCircle, Tag, ExternalLink, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';
 import { getT } from '../data/translations';
 import { BROKERAGE_CONFIG, PORTFOLIO_DOMAINS } from '../data/domains';
+import { TurnstileCaptcha } from './TurnstileCaptcha';
 
 interface ContactSectionProps {
   language: Language;
@@ -25,6 +26,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  // Anti-bot & CAPTCHA states
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState('');
+  const [captchaResetCount, setCaptchaResetCount] = useState(0);
+  const [captchaErrorAlert, setCaptchaErrorAlert] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+
   const [submittedData, setSubmittedData] = useState<{
     domain: string;
     waUrl: string;
@@ -43,6 +52,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 1. Anti-bot honeypot check: If bot filled out invisible trap, silently drop
+    if (honeypot) {
+      console.warn('Automated bot submission dropped via honeypot trap.');
+      return;
+    }
+
+    // 2. Strict Anti-bot CAPTCHA validation
+    if (!isCaptchaVerified || !captchaToken) {
+      setCaptchaErrorAlert(t.captchaRequiredAlert);
+      return;
+    }
+    setCaptchaErrorAlert('');
     setIsSubmitting(true);
 
     const targetDomainName =
@@ -124,12 +146,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           _cc: 'sadoox911@gmail.com',
           _template: 'table',
           _captcha: 'false',
+          _honey: honeypot,
           'Target Domain / النطاق المطلوب': targetDomainName,
           'Buyer Name / اسم المشتري': fullName,
           'Email / البريد الإلكتروني': email,
           'Phone / رقم الهاتف': phone,
           'Proposed Offer / قيمة العرض': offerAmount,
           'Notes / الملاحظات': message || (isAr ? 'لا توجد ملاحظات إضافية' : 'No additional notes'),
+          'Anti-Bot Security / التحقق الأمني': 'Cloudflare Turnstile Verified',
+          'Security Token': captchaToken ? `${captchaToken.substring(0, 36)}...` : 'Verified',
           'Submission Date / تاريخ الإرسال': new Date().toLocaleString(isAr ? 'ar-QA' : 'en-US'),
         }),
       });
@@ -150,6 +175,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     setMessage('');
     setCustomDomain('');
     setSubmittedData(null);
+    setIsCaptchaVerified(false);
+    setCaptchaToken('');
+    setCaptchaResetCount((prev) => prev + 1);
+    setCaptchaErrorAlert('');
+    setHoneypot('');
   };
 
   return (
@@ -420,15 +450,73 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 />
               </div>
 
+              {/* Invisible Honeypot Field for Automated Bot Trapping */}
+              <div aria-hidden="true" className="hidden opacity-0 pointer-events-none absolute -left-[9999px]">
+                <label htmlFor="website-hp-trap">Do not fill this field</label>
+                <input
+                  id="website-hp-trap"
+                  type="text"
+                  name="_honey"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
+              {/* Cloudflare Turnstile Anti-Bot CAPTCHA Protection */}
+              <div className="pt-1 space-y-2">
+                <TurnstileCaptcha
+                  language={language}
+                  isVerified={isCaptchaVerified}
+                  onVerify={(token) => {
+                    setIsCaptchaVerified(true);
+                    setCaptchaToken(token);
+                    setCaptchaErrorAlert('');
+                  }}
+                  onExpire={() => {
+                    setIsCaptchaVerified(false);
+                    setCaptchaToken('');
+                  }}
+                  resetTrigger={captchaResetCount}
+                />
+
+                {captchaErrorAlert && (
+                  <p className="text-xs font-bold text-red-600 px-1 animate-bounce">
+                    ⚠️ {captchaErrorAlert}
+                  </p>
+                )}
+              </div>
+
+              {/* Submit Button with Anti-Bot Validation */}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#8A1538] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#70102d] disabled:opacity-50 shadow-sm cursor-pointer"
+                disabled={isSubmitting || !isCaptchaVerified}
+                className={`flex w-full items-center justify-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-bold text-white transition-all shadow-sm ${
+                  !isCaptchaVerified || isSubmitting
+                    ? 'bg-slate-400/90 cursor-not-allowed opacity-60 shadow-none'
+                    : 'bg-[#8A1538] hover:bg-[#70102d] hover:shadow-md active:scale-[0.99] cursor-pointer'
+                }`}
+                title={!isCaptchaVerified ? t.captchaPrompt : ''}
               >
-                <Send className="h-4 w-4" />
-                <span>
-                  {isSubmitting ? t.submitSending : t.submitInquiry}
-                </span>
+                {isSubmitting ? (
+                  <>
+                    <div className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                    <span>{t.submitSending}</span>
+                  </>
+                ) : !isCaptchaVerified ? (
+                  <>
+                    <ShieldCheck className="h-4 w-4 opacity-70" />
+                    <span>
+                      {isAr ? 'يرجى إكمال رمز التحقق أعلاه' : 'Verify CAPTCHA Above to Submit'}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    <span>{t.submitInquiry}</span>
+                  </>
+                )}
               </button>
             </form>
           )}
