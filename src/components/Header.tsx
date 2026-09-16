@@ -49,33 +49,33 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Qatar Flag Maroon & Ruby Radiant Top Accent Line */}
       <div className="h-1.5 w-full bg-gradient-to-r from-[#560018] via-[#8A1538] via-rose-500 to-[#560018] shadow-[0_1px_8px_rgba(138,21,56,0.6)]" />
 
-      <div className="mx-auto flex h-16 sm:h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 sm:h-18 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
         {/* Brand: Unified "Qatar Domains" Bubble Pill matching Footer, without AI icons */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center">
           <a
             href="#root"
-            className="group relative flex items-center transition-transform duration-200 hover:scale-[1.03] active:scale-95"
+            className="group relative flex items-center transition-transform duration-200 hover:scale-[1.03] active:scale-95 shrink-0"
             id="brand-header-link"
           >
             {/* Unified Qatar Domains Bubble Pill */}
             <span
               dir="ltr"
-              className="relative inline-flex items-center px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-rose-600 via-[#8A1538] to-amber-500 text-white font-display text-lg sm:text-xl md:text-2xl font-black shadow-[0_4px_14px_rgba(225,29,72,0.45),inset_0_1.5px_2px_rgba(255,255,255,0.45)] border border-rose-300/40 tracking-tight transition-all duration-300 group-hover:shadow-[0_6px_20px_rgba(225,29,72,0.6)]"
+              className="relative inline-flex items-center px-3 sm:px-5 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-rose-600 via-[#8A1538] to-amber-500 text-white font-display text-sm sm:text-lg md:text-xl font-black shadow-[0_3px_12px_rgba(225,29,72,0.45),inset_0_1px_2px_rgba(255,255,255,0.45)] border border-rose-300/40 tracking-tight transition-all duration-300 group-hover:shadow-[0_6px_20px_rgba(225,29,72,0.6)] whitespace-nowrap"
             >
               {/* Glossy top sheen */}
-              <span className="absolute top-0.5 left-3 right-3 h-2 rounded-full bg-gradient-to-b from-white/35 to-transparent pointer-events-none" />
+              <span className="absolute top-0.5 left-2 sm:left-3 right-2 sm:right-3 h-1.5 sm:h-2 rounded-full bg-gradient-to-b from-white/35 to-transparent pointer-events-none" />
               Qatar Domains
             </span>
           </a>
         </div>
 
         {/* Controls: Doha Live Clock & Simplified Language Switch */}
-        <div className="flex items-center gap-2 sm:gap-3.5">
+        <div className="flex items-center gap-1.5 sm:gap-3.5">
           {/* Live Qatar Clock (Dark Luxury Pill) */}
-          <div className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 sm:px-4 py-1.5 text-xs font-semibold text-amber-300 shadow-[0_2px_10px_rgba(245,158,11,0.1)]">
-            <Clock className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
-            <span className="hidden xs:inline text-amber-200/90">{t.dohaTime}</span>
-            <span dir="ltr" className="font-mono font-bold tracking-wider text-amber-300">
+          <div className="flex items-center gap-1.5 sm:gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-2 sm:px-3.5 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-amber-300 shadow-[0_2px_10px_rgba(245,158,11,0.1)] shrink-0">
+            <Clock className="h-3 sm:h-3.5 w-3 sm:w-3.5 text-amber-400 animate-pulse shrink-0" />
+            <span className="hidden sm:inline text-amber-200/90">{t.dohaTime}</span>
+            <span dir="ltr" className="font-mono font-bold tracking-wider text-amber-300 text-[11px] sm:text-xs">
               {dohaTime || '12:00:00'}
             </span>
           </div>
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Simplified Segmented Language Switch (العربية | English) */}
           <div
             id="language-switch-container"
-            className="inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/95 p-0.5 sm:p-1 shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+            className="inline-flex items-center rounded-full border border-slate-700/80 bg-slate-900/95 p-0.5 sm:p-1 shadow-[0_2px_10px_rgba(0,0,0,0.35)] shrink-0"
             role="group"
             aria-label="Language Selector"
           >
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
               id="lang-switch-ar"
               type="button"
               onClick={() => onLanguageChange('ar')}
-              className={`flex items-center gap-1 rounded-full px-2.5 sm:px-3 py-1 text-xs font-bold transition-all cursor-pointer select-none ${
+              className={`flex items-center gap-1 rounded-full px-2 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold transition-all cursor-pointer select-none whitespace-nowrap ${
                 language === 'ar'
                   ? 'bg-gradient-to-r from-[#8A1538] to-[#560018] text-white shadow-xs'
                   : 'text-slate-400 hover:text-slate-200'
@@ -105,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
               id="lang-switch-en"
               type="button"
               onClick={() => onLanguageChange('en')}
-              className={`flex items-center gap-1 rounded-full px-2.5 sm:px-3 py-1 text-xs font-bold transition-all cursor-pointer select-none font-sans ${
+              className={`flex items-center gap-1 rounded-full px-2 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold transition-all cursor-pointer select-none font-sans whitespace-nowrap ${
                 language === 'en'
                   ? 'bg-gradient-to-r from-[#8A1538] to-[#560018] text-white shadow-xs'
                   : 'text-slate-400 hover:text-slate-200'

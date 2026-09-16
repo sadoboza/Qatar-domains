@@ -104,18 +104,18 @@ export const DomainSlider: React.FC<DomainSliderProps> = ({
 
   return (
     <div
-      className="relative rounded-3xl border border-slate-200/90 bg-slate-50/70 p-4 sm:p-7 shadow-xs"
+      className="relative rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-slate-50/70 p-3 sm:p-7 shadow-xs"
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
       id="opensooq-domain-slider"
     >
       {/* Slider Header */}
-      <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-between gap-3">
+      <div className="mb-3 sm:mb-6 flex flex-col xs:flex-row xs:items-center justify-between gap-2 sm:gap-3">
         <div>
-          <h3 className="font-display text-lg sm:text-xl font-black tracking-tight text-slate-900">
+          <h3 className="font-display text-base sm:text-xl font-black tracking-tight text-slate-900">
             {isAr ? 'نطاقات مميزة معروضة للبيع' : 'Featured Domains for Sale'}
           </h3>
-          <p className="text-xs text-slate-500 font-medium">
+          <p className="text-[11px] sm:text-xs text-slate-500 font-medium">
             {isAr
               ? 'تصفح النطاقات وقدم عرضك فوراً على النطاق المناسب لمشروعك'
               : 'Browse all domains and submit your direct acquisition offer'}
@@ -123,36 +123,36 @@ export const DomainSlider: React.FC<DomainSliderProps> = ({
         </div>
 
         {/* Controls: Prev / Next + Autoplay toggle */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 self-end xs:self-auto">
           {/* Autoplay Pause/Play button */}
           <button
             type="button"
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
+            className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
             title={isPlaying ? (isAr ? 'إيقاف التحريك المؤقت' : 'Pause Autoplay') : (isAr ? 'تشغيل التحريك' : 'Start Autoplay')}
             aria-label="Toggle Autoplay"
           >
-            {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+            {isPlaying ? <Pause className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> : <Play className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}
           </button>
 
           {/* Previous Arrow */}
           <button
             type="button"
             onClick={() => scroll('prev')}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer disabled:opacity-40"
+            className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer disabled:opacity-40"
             aria-label="Previous Domain"
           >
-            {isAr ? <ChevronRight className="h-5 w-5" /> : <ChevronLeft className="h-5 w-5" />}
+            {isAr ? <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" /> : <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />}
           </button>
 
           {/* Next Arrow */}
           <button
             type="button"
             onClick={() => scroll('next')}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer disabled:opacity-40"
+            className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg sm:rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer disabled:opacity-40"
             aria-label="Next Domain"
           >
-            {isAr ? <ChevronLeft className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+            {isAr ? <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" /> : <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />}
           </button>
         </div>
       </div>
@@ -160,13 +160,13 @@ export const DomainSlider: React.FC<DomainSliderProps> = ({
       {/* Slider Track */}
       <div
         ref={sliderRef}
-        className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-3 sm:gap-6 overflow-x-auto pb-3 pt-1 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-transparent [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         style={{ scrollBehavior: 'smooth' }}
       >
         {domains.map((domain) => (
           <div
             key={domain.id}
-            className="slider-card w-[290px] sm:w-[330px] md:w-[350px] shrink-0 snap-start"
+            className="slider-card w-[80vw] max-w-[310px] sm:w-[330px] md:w-[350px] shrink-0 snap-start"
           >
             <DomainCard
               domain={domain}

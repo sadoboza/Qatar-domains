@@ -48,7 +48,7 @@ export const DomainCard: React.FC<DomainCardProps> = ({
       className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/90 bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8A1538]/50 hover:shadow-xl shadow-xs"
     >
       {/* Visual Header / Background Image specific to domain concept in bright daylight */}
-      <div className="relative h-44 sm:h-52 w-full overflow-hidden bg-slate-100">
+      <div className="relative h-38 sm:h-52 w-full overflow-hidden bg-slate-100">
         {domain.imageUrl ? (
           <img
             src={domain.imageUrl}
@@ -62,50 +62,50 @@ export const DomainCard: React.FC<DomainCardProps> = ({
         )}
 
         {/* Crisp daylight view: subtle bottom gradient for text legibility without darkening the image */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
 
         {/* Top Badges over image */}
-        <div className="absolute top-3 inset-x-3 flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 text-xs font-bold text-slate-800 border border-slate-200/80 shadow-xs">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="absolute top-2.5 sm:top-3 inset-x-2.5 sm:inset-x-3 flex items-center justify-between gap-1.5 sm:gap-2">
+          <span className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-white/95 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold text-slate-800 border border-slate-200/80 shadow-xs">
+            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <span>{isAr ? 'متاح للبيع' : 'For Sale'}</span>
           </span>
 
-          <span className="rounded-lg bg-[#560018] px-2.5 py-1 text-xs font-bold text-white shadow-xs">
+          <span className="rounded-lg bg-[#560018] px-2 sm:px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold text-white shadow-xs">
             {domainType}
           </span>
         </div>
 
         {/* Domain Name over the lower part of the image for high visual impact */}
-        <div className="absolute bottom-3 inset-x-3 flex items-end justify-between">
+        <div className="absolute bottom-2.5 sm:bottom-3 inset-x-2.5 sm:inset-x-3 flex items-end justify-between">
           <div dir="ltr" className="inline-flex items-baseline gap-0.5 text-left select-all">
-            <h3 className="font-display text-3xl sm:text-4xl font-black tracking-tight text-white drop-shadow-md">
+            <h3 className="font-display text-2xl sm:text-4xl font-black tracking-tight text-white drop-shadow-md">
               {domain.name.split('.')[0]}
             </h3>
-            <span className="font-display text-2xl sm:text-3xl font-extrabold text-[#f39c12] drop-shadow-md">
+            <span className="font-display text-xl sm:text-3xl font-extrabold text-[#f39c12] drop-shadow-md">
               .{domain.name.split('.')[1]}
             </span>
           </div>
 
-          <span className="text-[11px] font-semibold text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-md border border-white/20 hidden sm:block">
+          <span className="text-[10px] sm:text-[11px] font-semibold text-white bg-black/60 backdrop-blur-md px-1.5 sm:px-2 py-0.5 rounded-md border border-white/20 hidden xs:block">
             {imageAlt}
           </span>
         </div>
       </div>
 
       {/* Card Body */}
-      <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
+      <div className="flex flex-1 flex-col justify-between p-3.5 sm:p-6">
         <div>
           {/* Subtext description */}
-          <p className="text-sm leading-relaxed text-slate-600 font-medium line-clamp-2">
+          <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-medium line-clamp-2">
             {subtext}
           </p>
 
           {/* Quick highlights bullets */}
-          <ul className="mt-3 space-y-1 text-xs text-slate-500 font-medium">
+          <ul className="mt-2.5 sm:mt-3 space-y-1 text-[11px] sm:text-xs text-slate-500 font-medium">
             {(isAr ? domain.highlights.ar : domain.highlights.en).slice(0, 2).map((hl, idx) => (
               <li key={idx} className="flex items-center gap-1.5 line-clamp-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#8A1538]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#8A1538] shrink-0" />
                 <span>{hl}</span>
               </li>
             ))}
@@ -113,32 +113,32 @@ export const DomainCard: React.FC<DomainCardProps> = ({
         </div>
 
         {/* Card Actions: Buy via Atom.com + Details & Quick Contact */}
-        <div className="mt-5 pt-4 border-t border-slate-100 space-y-2.5">
+        <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-slate-100 space-y-2 sm:space-y-2.5">
           {/* Primary Action: Direct Buy via Atom.com */}
           <a
             id={`card-atom-btn-${domain.id}`}
             href={atomUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#8A1538] via-[#70102d] to-[#560018] px-3.5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-xs transition-all hover:shadow-md hover:scale-[1.01] cursor-pointer"
+            className="flex w-full items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-[#8A1538] via-[#70102d] to-[#560018] px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white shadow-xs transition-all hover:shadow-md hover:scale-[1.01] cursor-pointer"
             title={isAr ? 'الانتقال لصفحة الهبوط الرسمية في Atom.com للشراء' : 'Go to official Atom.com landing page'}
           >
-            <ShoppingCart className="h-4 w-4 shrink-0" />
+            <ShoppingCart className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
             <span>{isAr ? 'الشراء عبر منصة Atom.com' : 'Buy via Atom.com'}</span>
-            <ExternalLink className="h-4 w-4 opacity-85 shrink-0" />
+            <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 opacity-85 shrink-0" />
           </a>
 
           {/* Quick Actions: Details Modal + WhatsApp & Email */}
-          <div className="grid grid-cols-3 gap-1.5">
+          <div className="grid grid-cols-3 gap-1 sm:gap-1.5">
             {/* View Details Button */}
             <button
               id={`card-details-btn-${domain.id}`}
               type="button"
               onClick={() => onMakeOffer(domain)}
-              className="flex items-center justify-center gap-1 rounded-xl border border-slate-200 bg-slate-50 py-2 px-2 text-xs font-bold text-slate-700 transition-all hover:bg-slate-100 cursor-pointer"
+              className="flex items-center justify-center gap-1 rounded-lg sm:rounded-xl border border-slate-200 bg-slate-50 py-1.5 sm:py-2 px-1 sm:px-2 text-[11px] sm:text-xs font-bold text-slate-700 transition-all hover:bg-slate-100 cursor-pointer"
               title={isAr ? 'عرض مميزات النطاق' : 'View Highlights'}
             >
-              <Info className="h-3.5 w-3.5 text-slate-500 shrink-0" />
+              <Info className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-500 shrink-0" />
               <span>{isAr ? 'التفاصيل' : 'Details'}</span>
             </button>
 
@@ -148,11 +148,11 @@ export const DomainCard: React.FC<DomainCardProps> = ({
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1 rounded-xl border border-emerald-200 bg-emerald-50/70 py-2 px-2 text-xs font-bold text-emerald-800 transition-all hover:bg-emerald-100 hover:border-emerald-300"
+              className="flex items-center justify-center gap-1 rounded-lg sm:rounded-xl border border-emerald-200 bg-emerald-50/70 py-1.5 sm:py-2 px-1 sm:px-2 text-[11px] sm:text-xs font-bold text-emerald-800 transition-all hover:bg-emerald-100 hover:border-emerald-300"
               title={isAr ? 'تواصل عبر واتساب' : 'Chat on WhatsApp'}
               aria-label="WhatsApp"
             >
-              <MessageSquare className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+              <MessageSquare className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-emerald-600 shrink-0" />
               <span>{isAr ? 'واتساب' : 'WhatsApp'}</span>
             </a>
 
@@ -160,11 +160,11 @@ export const DomainCard: React.FC<DomainCardProps> = ({
             <a
               id={`card-email-${domain.id}`}
               href={mailtoUrl}
-              className="flex items-center justify-center gap-1 rounded-xl border border-blue-200 bg-blue-50/70 py-2 px-2 text-xs font-bold text-blue-900 transition-all hover:bg-blue-100 hover:border-blue-300"
+              className="flex items-center justify-center gap-1 rounded-lg sm:rounded-xl border border-blue-200 bg-blue-50/70 py-1.5 sm:py-2 px-1 sm:px-2 text-[11px] sm:text-xs font-bold text-blue-900 transition-all hover:bg-blue-100 hover:border-blue-300"
               title={isAr ? 'تواصل عبر البريد الإلكتروني' : 'Contact via Email'}
               aria-label="Email"
             >
-              <Mail className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+              <Mail className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-blue-600 shrink-0" />
               <span>{isAr ? 'إيميل' : 'Email'}</span>
             </a>
           </div>

@@ -97,25 +97,25 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 w-full">
         {/* Hero Section: Clean & Focused without redundant contact buttons */}
-        <section className="relative overflow-hidden bg-white py-10 sm:py-14 border-b border-slate-200/80">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative overflow-hidden bg-white py-6 sm:py-12 border-b border-slate-200/80">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 text-center">
             {/* Playful Bubble Badge */}
-            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-rose-500/20 bg-rose-500/5 px-3.5 py-1.5 shadow-2xs hover:scale-105 transition-transform duration-200">
-              <span className="h-2 w-2 rounded-full bg-[#8A1538] animate-pulse" />
+            <div className="mb-3 sm:mb-5 inline-flex items-center gap-1.5 sm:gap-2.5 rounded-full border border-rose-500/20 bg-rose-500/5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 shadow-2xs hover:scale-105 transition-transform duration-200">
+              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#8A1538] animate-pulse shrink-0" />
               <span
                 dir="ltr"
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-gradient-to-r from-rose-600 via-[#8A1538] to-amber-500 text-white font-display text-xs font-black shadow-xs"
+                className="inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-full bg-gradient-to-r from-rose-600 via-[#8A1538] to-amber-500 text-white font-display text-[10px] sm:text-xs font-black shadow-xs whitespace-nowrap shrink-0"
               >
                 Qatar Domains
               </span>
-              <span className="text-xs font-semibold text-slate-500 border-s border-slate-300 ps-2.5">
+              <span className="text-[11px] sm:text-xs font-semibold text-slate-500 border-s border-slate-300 ps-2 sm:ps-2.5 whitespace-nowrap">
                 {t.heroBadge}
               </span>
             </div>
 
             {/* Main Platform Title */}
-            <div className="inline-block">
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight sm:leading-tight">
+            <div className="inline-block px-1">
+              <h1 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-snug sm:leading-tight">
                 {isAr ? (
                   <>
                     منصة النطاقات <span className="text-[#8A1538]">الدولية والحصرية</span>
@@ -129,12 +129,12 @@ export default function App() {
             </div>
 
             {/* Subtitle */}
-            <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+            <p className="mx-auto mt-2 sm:mt-4 max-w-3xl text-xs xs:text-sm sm:text-base md:text-lg text-slate-600 font-normal sm:font-medium leading-relaxed px-1 sm:px-0">
               {t.portfolioSubtitle}
             </p>
 
             {/* Search and Category Filter */}
-            <div className="mt-8 mx-auto max-w-2xl" id="inventory-section">
+            <div className="mt-5 sm:mt-8 mx-auto max-w-2xl" id="inventory-section">
               <SearchBar
                 language={language}
                 searchQuery={searchQuery}
@@ -149,44 +149,44 @@ export default function App() {
         </section>
 
         {/* Domains Showcase Area */}
-        <section className="py-10 sm:py-14">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+        <section className="py-6 sm:py-12">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 space-y-6 sm:space-y-10">
             {/* View Mode Switcher: OpenSooq Slider vs Grid View */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#8A1538]" />
-                <span className="text-sm font-bold text-slate-800">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="h-2 w-2 rounded-full bg-[#8A1538] shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-slate-800">
                   {t.showcaseHeading}
                 </span>
               </div>
 
               {/* Slider / Grid Toggle Buttons */}
-              <div className="flex items-center gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-2xs">
+              <div className="flex items-center gap-1 rounded-xl border border-slate-200 bg-white p-0.5 sm:p-1 shadow-2xs shrink-0">
                 <button
                   type="button"
                   onClick={() => setDisplayMode('slider')}
-                  className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${
+                  className={`flex items-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
                     displayMode === 'slider'
                       ? 'bg-[#8A1538] text-white shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                   title={t.sliderTooltip}
                 >
-                  <Sliders className="h-3.5 w-3.5" />
+                  <Sliders className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   <span>{t.viewModeSlider}</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setDisplayMode('grid')}
-                  className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${
+                  className={`flex items-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold transition-all cursor-pointer ${
                     displayMode === 'grid'
                       ? 'bg-[#8A1538] text-white shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                   title={t.gridTooltip}
                 >
-                  <Grid className="h-3.5 w-3.5" />
+                  <Grid className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   <span>{t.viewModeGrid}</span>
                 </button>
               </div>
@@ -208,8 +208,8 @@ export default function App() {
               <div>
                 {filteredSections.length === 0 ? (
                   /* No Search Results */
-                  <div className="py-16 text-center rounded-2xl border border-slate-200 bg-white p-8 space-y-4">
-                    <p className="text-slate-600 font-semibold text-base">{t.noDomainsFound}</p>
+                  <div className="py-12 sm:py-16 text-center rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 space-y-4">
+                    <p className="text-slate-600 font-semibold text-sm sm:text-base">{t.noDomainsFound}</p>
                     <button
                       type="button"
                       onClick={() => {
@@ -222,7 +222,7 @@ export default function App() {
                     </button>
                   </div>
                 ) : (
-                  <div className="space-y-12 sm:space-y-16">
+                  <div className="space-y-8 sm:space-y-16">
                     {filteredSections.map((section) => {
                       const title = isAr ? section.title.ar : section.title.en;
                       const subtitle = isAr ? section.subtitle.ar : section.subtitle.en;
@@ -244,24 +244,24 @@ export default function App() {
                         <div
                           key={section.id}
                           id={`section-${section.id}`}
-                          className="scroll-mt-24 space-y-5"
+                          className="scroll-mt-20 sm:scroll-mt-24 space-y-3.5 sm:space-y-5"
                         >
                           {/* Section Header with Qatar Maroon */}
-                          <div className="border-b border-slate-200 pb-3">
-                            <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-[#8A1538] uppercase">
-                              <SectionIcon className="h-4 w-4 text-[#8A1538]" />
+                          <div className="border-b border-slate-200 pb-2.5 sm:pb-3">
+                            <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-bold tracking-wider text-[#8A1538] uppercase">
+                              <SectionIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#8A1538]" />
                               <span>{isAr ? `القسم ${section.number}` : `SECTION ${section.number}`}</span>
                             </div>
-                            <h2 className="mt-1 font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+                            <h2 className="mt-1 font-display text-lg sm:text-2xl md:text-3xl font-black tracking-tight text-slate-900">
                               {title}
                             </h2>
-                            <p className="mt-1 text-sm text-slate-600 max-w-3xl font-medium">
+                            <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-slate-600 max-w-3xl font-normal sm:font-medium">
                               {subtitle}
                             </p>
                           </div>
 
                           {/* Domain Boxes / Cards Grid with specific visual images */}
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                             {section.domains.map((domain) => (
                               <DomainCard
                                 key={domain.id}

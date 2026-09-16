@@ -185,43 +185,43 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   return (
     <section
       id="contact-section"
-      className="relative rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-10 md:p-12 shadow-xs"
+      className="relative rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white p-4 sm:p-10 md:p-12 shadow-xs"
     >
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-12">
         {/* Left Column: Direct Action Cards */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-4 sm:space-y-6">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#8A1538]/10 px-3 py-1 text-xs font-semibold text-[#8A1538]">
+            <span className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-[#8A1538]/10 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold text-[#8A1538]">
               <Tag className="h-3 w-3 text-[#8A1538]" />
               <span>{t.contactSectionBadge}</span>
             </span>
-            <h2 className="mt-3 font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+            <h2 className="mt-2 sm:mt-3 font-display text-xl sm:text-3xl font-black tracking-tight text-slate-900">
               {t.contactSectionTitle}
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+            <p className="mt-1.5 sm:mt-2 text-xs sm:text-base text-slate-600 leading-relaxed font-normal sm:font-medium">
               {t.contactSectionSubtitle}
             </p>
           </div>
 
           {/* Direct Action Cards */}
-          <div className="space-y-3">
+          <div className="space-y-2.5 sm:space-y-3">
             {/* WhatsApp Link Card */}
             <a
               id="contact-whatsapp-link"
               href={`https://wa.me/${BROKERAGE_CONFIG.whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3.5 rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4 transition-all hover:bg-emerald-100 hover:border-emerald-300 group"
+              className="flex items-center gap-3 sm:gap-3.5 rounded-xl sm:rounded-2xl border border-emerald-200 bg-emerald-50/70 p-3 sm:p-4 transition-all hover:bg-emerald-100 hover:border-emerald-300 group"
               aria-label="WhatsApp"
             >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-2xs group-hover:scale-105 transition-transform">
-                <MessageSquare className="h-5 w-5" />
+              <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-emerald-600 text-white shadow-2xs group-hover:scale-105 transition-transform">
+                <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block">
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-700 block">
                   {t.whatsAppCardTitle}
                 </span>
-                <span className="text-sm font-semibold text-slate-800">
+                <span className="text-xs sm:text-sm font-semibold text-slate-800">
                   {t.whatsAppCardSubtitle}
                 </span>
               </div>
@@ -231,17 +231,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <a
               id="contact-email-link"
               href={`mailto:${BROKERAGE_CONFIG.email}?cc=sadoox911@gmail.com`}
-              className="flex items-center gap-3.5 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 transition-all hover:bg-slate-100 hover:border-slate-300 group"
+              className="flex items-center gap-3 sm:gap-3.5 rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50/80 p-3 sm:p-4 transition-all hover:bg-slate-100 hover:border-slate-300 group"
               aria-label="Email"
             >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8A1538] text-white shadow-2xs group-hover:scale-105 transition-transform">
-                <Mail className="h-5 w-5" />
+              <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-[#8A1538] text-white shadow-2xs group-hover:scale-105 transition-transform">
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#8A1538] block">
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#8A1538] block">
                   {t.emailCardTitle}
                 </span>
-                <span className="text-sm font-semibold text-slate-800">
+                <span className="text-xs sm:text-sm font-semibold text-slate-800">
                   {t.emailCardSubtitle}
                 </span>
               </div>
@@ -314,12 +314,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 space-y-4"
+              className="rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50/60 p-4 sm:p-8 space-y-3.5 sm:space-y-4"
               id="offer-form"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-600 mb-1 sm:mb-1.5">
                     {t.fullName} *
                   </label>
                   <input
@@ -328,12 +328,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder={t.fullNamePlaceholder}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-600 mb-1 sm:mb-1.5">
                     {t.emailAddress} *
                   </label>
                   <input
@@ -343,14 +343,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t.emailPlaceholder}
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-600 mb-1 sm:mb-1.5">
                     {t.phoneLabel} *
                   </label>
                   <input
@@ -360,12 +360,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+968 ... / +974 ..."
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left font-mono"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left font-mono"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                  <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-600 mb-1 sm:mb-1.5">
                     {t.targetDomainLabel} *
                   </label>
                   <select
@@ -373,7 +373,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     onChange={(e) => setSelectedDomain(e.target.value)}
                     dir="ltr"
                     required
-                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-slate-900 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
                   >
                     <option value="">
                       {t.selectDomainOption}
@@ -433,20 +433,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   value={offerAmount}
                   onChange={(e) => setOfferAmount(e.target.value)}
                   placeholder={t.offerPlaceholder}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 font-semibold"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 font-semibold"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-600 mb-1 sm:mb-1.5">
                   {t.messageLabel}
                 </label>
                 <textarea
-                  rows={3}
+                  rows={2}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder={t.messagePlaceholder}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20"
                 />
               </div>
 
@@ -492,7 +492,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting || !isCaptchaVerified}
-                className={`flex w-full items-center justify-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-bold text-white transition-all shadow-sm ${
+                className={`flex w-full items-center justify-center gap-2 rounded-xl px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-bold text-white transition-all shadow-sm ${
                   !isCaptchaVerified || isSubmitting
                     ? 'bg-slate-400/90 cursor-not-allowed opacity-60 shadow-none'
                     : 'bg-[#8A1538] hover:bg-[#70102d] hover:shadow-md active:scale-[0.99] cursor-pointer'
