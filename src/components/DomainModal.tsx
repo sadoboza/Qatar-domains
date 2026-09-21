@@ -34,9 +34,12 @@ export const DomainModal: React.FC<DomainModalProps> = ({
   const domainType = isAr ? domain.typeAr : domain.type;
   const imageAlt = domain.imageAlt ? (isAr ? domain.imageAlt.ar : domain.imageAlt.en) : domain.name;
 
-  // Domain Atom.com landing page URL
-  const atomUrl =
-    domain.atomUrl || `https://domains.atom.com/lpd/name/${domain.name.toLowerCase()}`;
+  // Direct mailto URL for purchase or Escrow inquiry
+  const directMailtoUrl = `mailto:sales@qatar-domains.tech?subject=Inquiry about ${domain.name}&body=${encodeURIComponent(
+    isAr
+      ? `السلام عليكم،\n\nأود التواصل للشراء مباشرة أو عبر Escrow للنطاق: ${domain.name}\n\nمع الشكر،`
+      : `Hello,\n\nI would like to inquire about purchasing ${domain.name} directly or via Escrow.\n\nRegards,`
+  )}`;
 
   // WhatsApp link
   const waMessage = encodeURIComponent(
@@ -127,35 +130,32 @@ export const DomainModal: React.FC<DomainModalProps> = ({
             </p>
           </div>
 
-          {/* Primary Action: Buy on Atom.com (No Form) */}
+          {/* Primary Action: Contact for Direct Purchase or Escrow */}
           <div className="rounded-xl sm:rounded-2xl border-2 border-[#8A1538]/20 bg-gradient-to-b from-[#8A1538]/5 to-slate-50 p-3.5 sm:p-5 text-center space-y-2.5 sm:space-y-3.5">
             <div className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-[#8A1538]/10 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold text-[#8A1538]">
               <Sparkles className="h-3 sm:h-3.5 w-3 sm:w-3.5 text-[#8A1538]" />
-              <span>{isAr ? 'منصة Atom.com الرسمية' : 'Official Atom.com Marketplace'}</span>
+              <span>{isAr ? 'خدمة الوساطة والشراء المباشر' : 'Direct & Escrow Brokerage'}</span>
             </div>
 
             <div>
               <h3 className="font-bold text-slate-900 text-sm sm:text-lg">
-                {isAr ? 'إتمام الشراء ونقل الملكية المباشر' : 'Instant Acquisition & Escrow Transfer'}
+                {isAr ? 'إتمام الشراء ونقل الملكية' : 'Acquisition & Ownership Transfer'}
               </h3>
               <p className="text-[11px] sm:text-sm text-slate-600 mt-1 max-w-md mx-auto">
                 {isAr
-                  ? 'عند النقر على الزر أدناه سيتم توجيهك مباشرة إلى صفحة هبوط النطاق في منصة Atom.com للشراء الآمن مع حماية المشتري الكاملة.'
-                  : 'Click the button below to be redirected to the official Atom.com landing page for this domain with full buyer protection and escrow.'}
+                  ? 'تواصل معنا مباشرة لإتمام صفقة الاستحواذ بشكل آمن إما بشكل مباشر أو عبر خدمات Escrow المعتمدة.'
+                  : 'Contact us directly to complete your domain acquisition securely either directly or via trusted Escrow.'}
               </p>
             </div>
 
-            {/* Main Buy Button pointing to Atom landing page */}
+            {/* Main CTA Button */}
             <a
-              id="modal-atom-buy-button"
-              href={atomUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              id="modal-direct-contact-btn"
+              href={directMailtoUrl}
               className="flex w-full items-center justify-center gap-2 sm:gap-3 rounded-xl bg-gradient-to-r from-[#8A1538] via-[#70102d] to-[#560018] px-4 sm:px-6 py-2.5 sm:py-3.5 text-sm sm:text-lg font-bold text-white shadow-md hover:shadow-lg hover:scale-[1.01] transition-all cursor-pointer"
             >
-              <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
-              <span>{isAr ? 'الشراء عبر منصة Atom.com' : 'Buy via Atom.com'}</span>
-              <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 opacity-85" />
+              <Mail className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+              <span>{isAr ? 'تواصل للشراء مباشرة أو عبر Escrow' : 'Contact for Direct Purchase or Escrow'}</span>
             </a>
 
             {/* Trust and safety points */}

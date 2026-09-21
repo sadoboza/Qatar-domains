@@ -113,14 +113,16 @@ export const TurnstileCaptcha: React.FC<TurnstileCaptchaProps> = ({
         'expired-callback': () => {
           onExpire();
         },
-        'error-callback': () => {
-          // If Turnstile widget encounters origin/key issue, enable fallback mode smoothly
+        'error-callback': (err: any) => {
+          // If Turnstile widget encounters origin/key issue or error 110200, enable fallback mode smoothly without spamming console
+          console.debug('Turnstile warning caught, switching to secure built-in verification:', err);
           setLoadError(true);
         },
       });
 
       widgetIdRef.current = id;
-    } catch {
+    } catch (e) {
+      console.debug('Turnstile render exception caught, falling back:', e);
       setLoadError(true);
     }
 

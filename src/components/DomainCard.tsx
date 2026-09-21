@@ -19,9 +19,12 @@ export const DomainCard: React.FC<DomainCardProps> = ({
   const domainType = isAr ? domain.typeAr : domain.type;
   const imageAlt = domain.imageAlt ? (isAr ? domain.imageAlt.ar : domain.imageAlt.en) : domain.name;
 
-  // Atom.com landing page URL for this domain
-  const atomUrl =
-    domain.atomUrl || `https://domains.atom.com/lpd/name/${domain.name.toLowerCase()}`;
+  // Direct Mailto URL for purchase or Escrow inquiry
+  const directMailtoUrl = `mailto:sales@qatar-domains.tech?subject=Inquiry about ${domain.name}&body=${encodeURIComponent(
+    isAr
+      ? `السلام عليكم،\n\nأود التواصل للشراء مباشرة أو عبر Escrow للنطاق: ${domain.name}\n\nمع الشكر،`
+      : `Hello,\n\nI would like to inquire about purchasing ${domain.name} directly or via Escrow.\n\nRegards,`
+  )}`;
 
   // WhatsApp prefilled message
   const waMessage = encodeURIComponent(
@@ -114,18 +117,15 @@ export const DomainCard: React.FC<DomainCardProps> = ({
 
         {/* Card Actions: Buy via Atom.com + Details & Quick Contact */}
         <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-slate-100 space-y-2 sm:space-y-2.5">
-          {/* Primary Action: Direct Buy via Atom.com */}
+          {/* Primary Action: Contact for Direct Purchase or Escrow */}
           <a
-            id={`card-atom-btn-${domain.id}`}
-            href={atomUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            id={`card-contact-btn-${domain.id}`}
+            href={directMailtoUrl}
             className="flex w-full items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-gradient-to-r from-[#8A1538] via-[#70102d] to-[#560018] px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white shadow-xs transition-all hover:shadow-md hover:scale-[1.01] cursor-pointer"
-            title={isAr ? 'الانتقال لصفحة الهبوط الرسمية في Atom.com للشراء' : 'Go to official Atom.com landing page'}
+            title={isAr ? 'تواصل للشراء مباشرة أو عبر Escrow' : 'Contact for Direct Purchase or Escrow'}
           >
-            <ShoppingCart className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
-            <span>{isAr ? 'الشراء عبر منصة Atom.com' : 'Buy via Atom.com'}</span>
-            <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4 opacity-85 shrink-0" />
+            <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
+            <span>{isAr ? 'تواصل للشراء مباشرة أو عبر Escrow' : 'Contact for Direct Purchase or Escrow'}</span>
           </a>
 
           {/* Quick Actions: Details Modal + WhatsApp & Email */}

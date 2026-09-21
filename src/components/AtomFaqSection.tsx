@@ -33,12 +33,12 @@ const FAQ_ITEMS: FaqItem[] = [
     id: 'how-to-buy',
     icon: Lock,
     question: {
-      ar: 'كيف أشتري النطاق من خلال منصة Atom.com؟',
-      en: 'How do I purchase a domain through Atom.com?',
+      ar: 'كيف يمكنني شراء النطاق؟',
+      en: 'How can I purchase a domain?',
     },
     answer: {
-      ar: 'بكل بساطة، اضغط على زر "الشراء عبر منصة Atom.com" في بطاقة أي نطاق، وسيتم توجيهك مباشرة لصفحة الهبوط الرسمية للنطاق المعتمدة من Atom. من هناك يمكنك إتمام الشراء الفوري أو تقديم عرض مع حماية كاملة للمشتري وتأمين عملية النقل.',
-      en: 'Simply click "Buy via Atom.com" on any domain card to be redirected to the verified official Atom.com landing page. From there, you can complete the purchase immediately or submit an offer with complete buyer protection and verified transfer protocols.',
+      ar: 'بكل بساطة، اضغط على زر "تواصل للشراء" في بطاقة أي نطاق، وسيفتح لك نافذة إرسال بريد إلكتروني مباشر إلى إدارة الموقع sales@qatar-domains.tech لتقديم عرضك وبدء إجراءات النقل والاتفاق المباشر.',
+      en: 'Simply click the "Contact to Buy" button on any domain card to open a direct email to our management at sales@qatar-domains.tech to submit your offer and start the direct transfer and agreement process.',
     },
   },
   {
@@ -49,20 +49,20 @@ const FAQ_ITEMS: FaqItem[] = [
       en: 'How does the Escrow system guarantee 100% buyer protection?',
     },
     answer: {
-      ar: 'تتبع منصة Atom.com بروتوكول ضمان طرف ثالث معتمد عالمياً؛ حيث يتم احتجاز المبلغ في حساب ضمان آمن ومحمي، ولا يتم تحويل أي مبالغ إلى البائع حتى يتم نقل كود النطاق ووصول النطاق بالكامل إلى حسابك تحت سيطرتك الكاملة.',
-      en: 'Atom.com operates an internationally accredited third-party escrow service. Your funds are held securely in escrow and are never released to the seller until the domain authorization codes are verified and full ownership is confirmed in your registrar account.',
+      ar: 'عند الاتفاق على السعر، نستخدم خدمات وساطة مالية معتمدة وعالمية مثل (Escrow.com). يقوم المشتري بإيداع الثمن في حساب الوسيط الآمن، ولا يتم تحرير الأموال للبائع إلا بعد إتمام نقل ملكية النطاق بالكامل إلى حساب المشتري وتأكيده لاستلامه.',
+      en: 'Once the price is agreed upon, we use accredited global escrow services such as Escrow.com. The buyer deposits funds into the secure escrow account, and funds are only released to the seller after the domain ownership is fully transferred to the buyer\'s account and confirmed received.',
     },
   },
   {
     id: 'payment-methods',
     icon: CreditCard,
     question: {
-      ar: 'ما هي طرق الدفع المعتمدة في منصة Atom؟',
-      en: 'What payment options are supported on Atom?',
+      ar: 'ما هي طرق الدفع المعتمدة؟',
+      en: 'What are the approved payment methods?',
     },
     answer: {
-      ar: 'تدعم منصة Atom.com جميع وسائل الدفع العالمية الموثوقة: البطاقات الائتمانية (Visa, MasterCard, Amex)، والتحويل البنكي المباشر (Wire Transfer)، وPayPal، وApple Pay، مما يتيح لك إتمام الصفقة بسهولة وأمان تام.',
-      en: 'Atom.com accepts major global payment methods, including credit cards (Visa, MasterCard, Amex), secure wire transfers, PayPal, and Apple Pay, allowing you to complete your acquisition with complete peace of mind.',
+      ar: 'نقبل الدفع عبر بوابات الضمان المالي المعتمدة (Escrow)، والتحويلات البنكية المباشرة، بالإضافة إلى وسائل الدفع الرقمية المتاحة عند الاتفاق عبر البريد الإلكتروني.',
+      en: 'We accept payment via accredited Escrow services, direct bank wire transfers, and digital payment options agreed upon via email.',
     },
   },
   {
@@ -70,11 +70,11 @@ const FAQ_ITEMS: FaqItem[] = [
     icon: Zap,
     question: {
       ar: 'كم تستغرق عملية نقل ملكية النطاق إلى حسابي؟',
-      en: 'How long does the domain ownership transfer take?',
+      en: 'How long does domain ownership transfer take?',
     },
     answer: {
-      ar: 'تتم معظم عمليات النقل في غضون دقائق إلى 24 ساعة كحد أقصى؛ حيث يوفر فريق الدعم المختص في Atom خدمة نقل مجانية خطوة بخطوة لمساعدتك في ربط النطاق بحسابك في مسجلك المفضل (مثل Namecheap, GoDaddy, Dynadot أو المسجل المعتمد).',
-      en: 'Most transfers are completed within minutes up to 24 hours. Atom’s dedicated transfer team provides step-by-step assistance to smoothly push or transfer the domain into your registrar account (e.g., Namecheap, GoDaddy, Dynadot, or accredited registrar).',
+      ar: 'تستغرق العملية عادةً من 24 إلى 48 ساعة عمل بمجرد تأكيد إيداع الأموال في نظام الوساطة (Escrow) وإرسال كود النقل (Auth Code) الخاص بالنطاق.',
+      en: 'The process typically takes 24 to 48 business hours once funds deposit is confirmed in the Escrow system and the domain Auth Code is dispatched.',
     },
   },
 ];
@@ -108,13 +108,9 @@ export const AtomFaqSection: React.FC<AtomFaqSectionProps> = ({ language }) => {
 
           <h2 className="font-display text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
             {isAr ? (
-              <>
-                كيف تضمن منصة <span className="text-[#8A1538] font-mono">Atom.com</span> شراءً آمناً وسريعاً؟
-              </>
+              <>كيف تضمن عملية شراء آمنة وسريعة؟</>
             ) : (
-              <>
-                Safe & Guaranteed Purchase via <span className="text-[#8A1538] font-mono">Atom.com</span>
-              </>
+              <>How to Ensure a Safe & Fast Purchase Process?</>
             )}
           </h2>
 
@@ -179,20 +175,10 @@ export const AtomFaqSection: React.FC<AtomFaqSectionProps> = ({ language }) => {
             <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
             <span>
               {isAr
-                ? 'جميع الصفقات تتم وفق أعلى المعايير الدولية لحماية المشتري ونقل الملكية الموثق.'
+                ? 'جميع الصفقات تتم وفق أعلى المعايير الدولية لحماية المشتري ونقل الملكية الموثق عبر نظام الوساطة (Escrow).'
                 : 'All transactions adhere to strict international buyer protection and verified escrow transfer.'}
             </span>
           </div>
-
-          <a
-            href="https://www.atom.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[#8A1538] hover:underline font-bold"
-          >
-            <span>Atom.com</span>
-            <ExternalLink className="h-3 w-3" />
-          </a>
         </div>
       </div>
     </section>

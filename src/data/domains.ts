@@ -1637,6 +1637,94 @@ export const PORTFOLIO_DOMAINS: DomainItem[] = [
       ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
     },
   },
+  {
+    id: 'ing-company',
+    name: 'ING.company',
+    tld: '.company',
+    sectionId: 'global-brands',
+    subtext: {
+      en: 'Elite corporate brand domain for financial institutions, global enterprises, and multinational companies.',
+      ar: 'نطاق مؤسسي راقٍ للمؤسسات المالية، الشركات الكبرى، والشركات متعددة الجنسيات.',
+    },
+    imageUrl: dexpreludeFintechImg,
+    imageAlt: {
+      en: 'Global Corporate Headquarters & Enterprise FinTech Tower',
+      ar: 'مقر الشركات العالمية وأبراج الأعمال والمال',
+    },
+    highlights: {
+      en: [
+        'Authoritative 3-letter corporate brand (.company)',
+        'Ideal for international banks, enterprise holding firms, and corporate entities',
+        'Instant trust and global prestige in commercial markets',
+        'Short, memorable, and powerful professional positioning'
+      ],
+      ar: [
+        'علامة تجارية مؤسسية ثلاثية قوية (.company)',
+        'مثالي للبنوك الدولية، شركات القابضة الكبرى، والكيانات التجارية',
+        'موثوقية فورية وهيبة عالمية في الأسواق التجارية',
+        'موضع احترافي قصير وسهل التذكر'
+      ],
+    },
+    characters: 3,
+    type: 'Enterprise Corporate .COMPANY',
+    typeAr: 'نطاق الشركات والمؤسسات (.company)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: 'Global Registry',
+    atomUrl: 'https://www.atom.com/view/name/ING',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
+  {
+    id: 'coinby-ai',
+    name: 'coinby.ai',
+    tld: '.ai',
+    sectionId: 'ai',
+    subtext: {
+      en: 'Next-generation artificial intelligence platform for crypto trading, decentralized finance, and automated digital assets.',
+      ar: 'منصة ذكاء اصطناعي للجيل القادم لتداول العملات الرقمية، التمويل اللامركزي، والأصول الرقمية المؤتمتة.',
+    },
+    imageUrl: chatrekImg,
+    imageAlt: {
+      en: 'Advanced AI Crypto Trading & Blockchain Neural Network',
+      ar: 'شبكات الذكاء الاصطناعي لتداول وتتبع العملات الرقمية',
+    },
+    highlights: {
+      en: [
+        'Powerful synergy of "Coin" (Crypto) and "By" (Powered by / Built by AI)',
+        'Perfect for AI-driven crypto trading bots, algorithmic portfolios, and Web3 intelligence',
+        'High-value .AI extension commanding massive tech and crypto interest',
+        'Catchy 6-letter brand with high market recall and viral potential'
+      ],
+      ar: [
+        'تكامل قوي بين العملات الرقمية (Coin) والذكاء الاصطناعي (By AI)',
+        'مثالي لروبوتات التداول المشفر بالذكاء الاصطناعي والمحافظ الاستثمارية الذكية',
+        'امتداد .ai عالي القيمة يحظى باهتمام تقني واسع في أسواق الكريبتو',
+        'علامة تجارية جذابة من 6 أحرف ذات رواج عالي وإمكانيات تسويقية هائلة'
+      ],
+    },
+    characters: 6,
+    type: 'AI Crypto & FinTech .AI',
+    typeAr: 'ذكاء اصطناعي وعملات رقمية (.ai)',
+    indicativeValuation: {
+      usd: 0,
+      qar: 0,
+    },
+    status: 'Available',
+    statusAr: 'متاح - قدم عرضاً',
+    registry: '.AI Official Registry',
+    atomUrl: 'https://www.atom.com/view/name/CoinBy',
+    transferTimeline: {
+      en: 'Fast Global Escrow & Registrar Push',
+      ar: 'نقل سريع وموثوق عبر إسكرو والمسجل المعتمد',
+    },
+  },
 ];
 
 export const PORTFOLIO_SECTIONS: SectionData[] = [
