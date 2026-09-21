@@ -17,6 +17,7 @@ declare global {
           theme?: 'light' | 'dark' | 'auto';
           language?: string;
           size?: 'normal' | 'compact' | 'flexible';
+          appearance?: 'always' | 'execute' | 'interaction-only';
         }
       ) => string;
       reset: (widgetId: string) => void;
@@ -107,6 +108,7 @@ export const TurnstileCaptcha: React.FC<TurnstileCaptchaProps> = ({
         theme: 'light',
         language: isAr ? 'ar' : 'en',
         size: 'normal',
+        appearance: 'interaction-only',
         callback: (token: string) => {
           onVerify(token);
         },
