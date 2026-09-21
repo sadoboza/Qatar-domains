@@ -66,7 +66,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
         {/* Horizontal scroll on mobile with no scrollbar, wrapping on sm screens */}
         <div
-          className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 sm:flex-wrap -mx-2 px-2 sm:mx-0 sm:px-0"
+          className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto sm:overflow-visible no-scrollbar py-1 flex-wrap -mx-2 px-2 sm:mx-0 sm:px-0"
           id="category-filter-pills"
         >
           <span className="hidden items-center gap-1 text-xs font-semibold text-slate-600 sm:flex me-1 shrink-0">
