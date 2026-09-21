@@ -488,36 +488,32 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 )}
               </div>
 
-              {/* Submit Button with Anti-Bot Validation */}
-              <button
-                type="submit"
-                disabled={isSubmitting || !isCaptchaVerified}
-                className={`flex w-full items-center justify-center gap-2 rounded-xl px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-bold text-white transition-all shadow-sm ${
-                  !isCaptchaVerified || isSubmitting
-                    ? 'bg-slate-400/90 cursor-not-allowed opacity-60 shadow-none'
-                    : 'bg-[#8A1538] hover:bg-[#70102d] hover:shadow-md active:scale-[0.99] cursor-pointer'
-                }`}
-                title={!isCaptchaVerified ? t.captchaPrompt : ''}
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-                    <span>{t.submitSending}</span>
-                  </>
-                ) : !isCaptchaVerified ? (
-                  <>
-                    <ShieldCheck className="h-4 w-4 opacity-70" />
-                    <span>
-                      {isAr ? 'يرجى إكمال رمز التحقق أعلاه' : 'Verify CAPTCHA Above to Submit'}
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-4 w-4" />
-                    <span>{t.submitInquiry}</span>
-                  </>
-                )}
-              </button>
+              {/* Submit Button appears ONLY after CAPTCHA verification click */}
+              {isCaptchaVerified ? (
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#8A1538] hover:bg-[#70102d] px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-bold text-white transition-all shadow-md hover:shadow-lg active:scale-[0.99] cursor-pointer animate-in fade-in duration-300"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                      <span>{t.submitSending}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4" />
+                      <span>{t.submitInquiry}</span>
+                    </>
+                  )}
+                </button>
+              ) : (
+                <div className="rounded-xl border border-dashed border-slate-300 bg-slate-100/70 p-3.5 text-center text-xs font-semibold text-slate-500">
+                  {isAr
+                    ? '🔒 يرجى الضغط على زر "تأكيد التحقق" في خانة الحماية أعلاه ليظهر زر إرسال العرض.'
+                    : '🔒 Please click "Confirm Verification" above to show the submit button.'}
+                </div>
+              )}
             </form>
           )}
         </div>

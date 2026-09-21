@@ -187,7 +187,7 @@ export const TurnstileCaptcha: React.FC<TurnstileCaptchaProps> = ({
         </div>
       </div>
 
-      {/* Widget Container or Fallback Checkbox */}
+      {/* Widget Container or Fallback Verification Button */}
       {!loadError ? (
         <div className="flex flex-col items-center justify-center min-h-[68px] py-1">
           <div ref={containerRef} className="my-1 flex justify-center" />
@@ -197,25 +197,48 @@ export const TurnstileCaptcha: React.FC<TurnstileCaptchaProps> = ({
             </p>
           )}
         </div>
-      ) : (
-        /* Seamless Built-in Anti-Bot Fallback when external script is blocked */
-        <div className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-3 shadow-xs">
-          <label className="flex items-center gap-3 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={fallbackChecked}
-              onChange={handleFallbackToggle}
-              className="h-5 w-5 rounded border-slate-300 text-[#8A1538] focus:ring-[#8A1538] cursor-pointer"
-            />
-            <span className="text-xs font-bold text-slate-800">
-              {isAr ? 'أنا لست برنامج روبوت (تحقق أمني)' : 'I am human (Security verification)'}
-            </span>
-          </label>
-          <div className="flex flex-col items-end">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-              Protected
-            </span>
+      ) : !isVerified ? (
+        /* Explicit Confirm Verification Button for Manual User Action */
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-3.5 shadow-xs">
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#8A1538]/10 text-[#8A1538]">
+              <ShieldCheck className="h-4 w-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-800 block">
+                {isAr ? 'التحقق الأمني (أنا لست روبوت)' : 'Human Security Verification'}
+              </span>
+              <span className="text-[11px] text-slate-500">
+                {isAr ? 'يجب الضغط على زر تأكيد التحقق لإظهار زر الإرسال' : 'Click confirm verification to show submit button'}
+              </span>
+            </div>
           </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              const simulatedToken = `verified-human-${Date.now()}`;
+              onVerify(simulatedToken);
+            }}
+            className="w-full sm:w-auto rounded-xl bg-[#8A1538] hover:bg-[#70102d] px-4 py-2 text-xs font-bold text-white transition-all shadow-xs cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+          >
+            <CheckCircle2 className="h-4 w-4" />
+            <span>{isAr ? 'تأكيد التحقق' : 'Confirm Verification'}</span>
+          </button>
+        </div>
+      ) : (
+        <div className="flex items-center justify-between rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-xs font-bold text-emerald-900">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+            <span>{isAr ? 'تم تأكيد التحقق بنجاح - ظهر زر إرسال العرض بالأسفل' : 'Verification confirmed successfully - Submit button is now visible'}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => onExpire()}
+            className="text-[11px] text-slate-500 underline hover:text-slate-700 cursor-pointer"
+          >
+            {isAr ? 'إعادة ضبط' : 'Reset'}
+          </button>
         </div>
       )}
 
