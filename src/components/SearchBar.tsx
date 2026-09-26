@@ -62,11 +62,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         )}
       </div>
 
-      {/* Category Pills & Counter */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
-        {/* Horizontal scroll on mobile with no scrollbar, wrapping on sm screens */}
+        {/* Category Pills & Counter */}
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        {/* Horizontal scroll on mobile with no scrollbar, wrapping nicely on desktop */}
         <div
-          className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto sm:overflow-visible no-scrollbar py-1 flex-wrap -mx-2 px-2 sm:mx-0 sm:px-0"
+          className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto lg:overflow-visible no-scrollbar py-1 flex-wrap"
           id="category-filter-pills"
         >
           <span className="hidden items-center gap-1 text-xs font-semibold text-slate-600 sm:flex me-1 shrink-0">
@@ -81,7 +81,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 id={`filter-pill-${cat.id}`}
                 type="button"
                 onClick={() => onCategorySelect(cat.id)}
-                className={`shrink-0 whitespace-nowrap rounded-lg border px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold transition-all cursor-pointer ${
+                className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                   isSelected
                     ? 'border-[#8A1538] bg-[#8A1538] text-white shadow-xs'
                     : 'border-slate-200 bg-white text-slate-600 hover:border-[#8A1538]/40 hover:bg-[#8A1538]/5 hover:text-[#8A1538]'
@@ -94,9 +94,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         </div>
 
         {/* Live inventory badge */}
-        <div className="flex items-center justify-end sm:justify-start">
-          <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#8A1538] bg-[#8A1538]/10 px-2.5 py-0.5 sm:py-1 rounded-full border border-[#8A1538]/20 shrink-0">
-            <Sparkles className="h-3 w-3 text-[#8A1538]" />
+        <div className="flex items-center justify-end lg:justify-start">
+          <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8A1538] bg-[#8A1538]/10 px-3 py-1 rounded-full border border-[#8A1538]/20 shrink-0">
+            <Sparkles className="h-3.5 w-3.5 text-[#8A1538]" />
             <span>
               {resultsCount} {t.resultsFound}
             </span>
