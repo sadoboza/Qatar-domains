@@ -186,7 +186,7 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
             {/* X (Twitter) - Icon Only */}
             <a
               id="footer-x-btn"
-              href="https://x.com/Hokotaki"
+              href="https://x.com/domainsooq"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center h-8.5 w-8.5 sm:h-10 sm:w-10 rounded-xl border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer shadow-sm"

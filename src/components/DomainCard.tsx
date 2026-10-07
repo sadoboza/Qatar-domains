@@ -70,8 +70,8 @@ export const DomainCard: React.FC<DomainCardProps> = ({
         {/* Top Badges over image */}
         <div className="absolute top-2.5 sm:top-3 inset-x-2.5 sm:inset-x-3 flex items-center justify-between gap-1.5 sm:gap-2">
           <span className="inline-flex items-center gap-1 sm:gap-1.5 rounded-full bg-white/95 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold text-slate-800 border border-slate-200/80 shadow-xs">
-            <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-            <span>{isAr ? 'متاح للبيع' : 'For Sale'}</span>
+            <span className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full ${domain.status === 'Sold' ? 'bg-red-500' : 'bg-emerald-500 animate-pulse'} shrink-0`} />
+            <span>{isAr ? (domain.status === 'Sold' ? 'تم البيع' : 'متاح للبيع') : (domain.status === 'Sold' ? 'Sold' : 'For Sale')}</span>
           </span>
 
           <span className="rounded-lg bg-[#560018] px-2 sm:px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold text-white shadow-xs">

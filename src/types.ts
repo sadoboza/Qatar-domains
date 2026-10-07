@@ -22,7 +22,7 @@ export interface DomainItem {
     usd: number;
     qar: number;
   };
-  status: 'Available' | 'Negotiable' | 'Under Offer';
+  status: 'Available' | 'Negotiable' | 'Under Offer' | 'Sold';
   statusAr: string;
   imageUrl?: string;
   imageAlt?: {

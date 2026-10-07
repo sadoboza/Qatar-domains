@@ -105,8 +105,8 @@ export const DomainModal: React.FC<DomainModalProps> = ({
           {/* Modal Header Title */}
           <div>
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 sm:px-3 py-0.5 text-[11px] sm:text-xs font-semibold">
-                {isAr ? 'متاح للبيع الفوري' : 'Available for Acquisition'}
+              <span className={`rounded-full px-2.5 sm:px-3 py-0.5 text-[11px] sm:text-xs font-semibold border ${domain.status === 'Sold' ? 'bg-red-50 text-red-800 border-red-200' : 'bg-emerald-50 text-emerald-800 border-emerald-200'}`}>
+                {isAr ? (domain.status === 'Sold' ? 'تم البيع' : 'متاح للبيع الفوري') : (domain.status === 'Sold' ? 'Sold' : 'Available for Acquisition')}
               </span>
               <span className="rounded-full bg-slate-100 text-slate-700 border border-slate-200 px-2 sm:px-2.5 py-0.5 text-[11px] sm:text-xs font-medium font-mono">
                 {domain.tld}
