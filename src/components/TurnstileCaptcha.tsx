@@ -108,7 +108,7 @@ export const TurnstileCaptcha: React.FC<TurnstileCaptchaProps> = ({
         theme: 'light',
         language: isAr ? 'ar' : 'en',
         size: 'normal',
-        appearance: 'interaction-only',
+        appearance: 'always',
         callback: (token: string) => {
           onVerify(token);
         },
