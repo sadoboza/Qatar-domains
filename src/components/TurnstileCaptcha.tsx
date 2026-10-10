@@ -184,7 +184,11 @@ export const TurnstileCaptcha: React.FC<TurnstileCaptchaProps> = ({
       {/* Official Standard Turnstile Widget View or Fallback */}
       {!loadError ? (
         <div className="flex items-center justify-center min-h-[65px] py-1 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
-          <div ref={containerRef} className="flex justify-center items-center w-full" />
+          <div 
+            ref={containerRef} 
+            className="cf-turnstile flex justify-center items-center w-full" 
+            data-sitekey={siteKey}
+          />
         </div>
       ) : !isVerified ? (
         /* Clean Fallback Checkbox matching Official View */
