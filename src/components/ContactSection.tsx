@@ -319,6 +319,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               className="rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50/60 p-4 sm:p-8 space-y-3.5 sm:space-y-4"
               id="offer-form"
             >
+              <input type="text" name="_honey" style={{ display: 'none' }} />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-600 mb-1 sm:mb-1.5">
