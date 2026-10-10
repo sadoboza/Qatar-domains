@@ -133,7 +133,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
     try {
       // Send real email via FormSubmit API to sales@qatar-domains.tech with CC to sadoox911@gmail.com
-      await fetch('https://formsubmit.co/ajax/sales@qatar-domains.tech', {
+      await fetch('https://formsubmit.co/ajax/d376817dcc818f49a7f88c49dc0b6b58', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -314,6 +314,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           ) : (
             <form
               onSubmit={handleSubmit}
+              action="https://formsubmit.co/d376817dcc818f49a7f88c49dc0b6b58"
+              method="POST"
               className="rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50/60 p-4 sm:p-8 space-y-3.5 sm:space-y-4"
               id="offer-form"
             >
@@ -325,6 +327,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <input
                     type="text"
                     required
+                    name="name"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder={t.fullNamePlaceholder}
@@ -339,6 +342,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <input
                     type="email"
                     required
+                    name="email"
                     dir="ltr"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -356,6 +360,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <input
                     type="text"
                     required
+                    name="phone"
                     dir="ltr"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
@@ -373,6 +378,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     onChange={(e) => setSelectedDomain(e.target.value)}
                     dir="ltr"
                     required
+                    name="domain"
                     className="w-full rounded-xl border border-slate-200 bg-white px-3 sm:px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-slate-900 focus:border-[#8A1538] focus:outline-none focus:ring-2 focus:ring-[#8A1538]/20 text-left"
                   >
                     <option value="">
@@ -414,6 +420,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   <input
                     type="text"
                     required
+                    name="custom_domain"
                     value={customDomain}
                     onChange={(e) => setCustomDomain(e.target.value)}
                     placeholder={t.customDomainPlaceholder}
@@ -430,6 +437,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <input
                   type="text"
                   required
+                  name="offer"
                   value={offerAmount}
                   onChange={(e) => setOfferAmount(e.target.value)}
                   placeholder={t.offerPlaceholder}
@@ -443,6 +451,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 </label>
                 <textarea
                   rows={2}
+                  name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder={t.messagePlaceholder}
