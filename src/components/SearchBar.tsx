@@ -25,13 +25,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   const isAr = language === 'ar';
 
   const categories = [
-    { id: 'all', labelEn: 'All Inventory', labelAr: 'كافة النطاقات' },
-    { id: 'clean-energy', labelEn: 'Clean Energy & Hydrogen', labelAr: 'الطاقة النظيفة والهيدروجين' },
-    { id: 'ai', labelEn: 'AI & Semiconductors', labelAr: 'الذكاء الاصطناعي وأشباه الموصلات' },
-    { id: 'healthcare', labelEn: 'Healthcare & Biotech', labelAr: 'الرعاية الصحية' },
-    { id: 'global-brands', labelEn: 'Global .COM & Media', labelAr: 'العلامات العالمية (.COM)' },
-    { id: 'dubai-hub', labelEn: 'Dubai & Regional Hub', labelAr: 'مشاريع دبي الإقليمية' },
-    { id: 'fintech-web3', labelEn: 'FinTech & Web3 Gaming', labelAr: 'الفنتك وألعاب الويب 3' },
+    { id: 'all', labelEn: 'All Domains', labelAr: 'كافة النطاقات' },
+    { id: 'qatar-qa', labelEn: 'Qatar Domains (.qa)', labelAr: 'نطاقات قطرية (.qa)' },
+    { id: 'arabic-names', labelEn: 'Arabic Names', labelAr: 'أسماء عربية مميزة' },
+    { id: 'gulf-commerce', labelEn: 'Commerce & Stores', labelAr: 'التجارة والمتاجر' },
+    { id: 'healthcare', labelEn: 'Healthcare & Services', labelAr: 'الرعاية الصحية والخدمات' },
+    { id: 'gaming', labelEn: 'Gaming & Entertainment', labelAr: 'الألعاب والترفيه' },
   ];
 
   return (

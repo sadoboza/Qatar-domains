@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import {
-  Zap,
-  Cpu,
+  Sparkles,
   HeartPulse,
   Globe,
   Sliders,
   Grid,
   Building2,
-  Coins,
+  Gamepad2,
+  Award,
 } from 'lucide-react';
 import { DomainItem, Language } from './types';
 import { PORTFOLIO_DOMAINS, PORTFOLIO_SECTIONS } from './data/domains';
@@ -45,8 +45,12 @@ export default function App() {
   const filteredDomains = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return PORTFOLIO_DOMAINS.filter((domain) => {
-      if (selectedCategory !== 'all' && domain.sectionId !== selectedCategory) {
-        return false;
+      if (selectedCategory !== 'all') {
+        if (selectedCategory === 'qatar-qa') {
+          if (domain.sectionId !== 'qatar-qa' && domain.tld !== '.qa') return false;
+        } else if (domain.sectionId !== selectedCategory) {
+          return false;
+        }
       }
       if (!query) return true;
 
@@ -118,11 +122,11 @@ export default function App() {
               <h1 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-snug sm:leading-tight">
                 {isAr ? (
                   <>
-                    منصة النطاقات <span className="text-[#8A1538]">الدولية والحصرية</span>
+                    منصة النطاقات <span className="text-[#8A1538]">الخليجية والعربية الحصرية</span>
                   </>
                 ) : (
                   <>
-                    International & Exclusive <span className="text-[#8A1538]">Domains Platform</span>
+                    Exclusive Gulf & Arabic <span className="text-[#8A1538]">Domains Platform</span>
                   </>
                 )}
               </h1>
@@ -228,17 +232,17 @@ export default function App() {
                       const subtitle = isAr ? section.subtitle.ar : section.subtitle.en;
 
                       const SectionIcon =
-                        section.id === 'clean-energy'
-                          ? Zap
-                          : section.id === 'ai'
-                          ? Cpu
+                        section.id === 'qatar-qa'
+                          ? Globe
+                          : section.id === 'arabic-names'
+                          ? Award
+                          : section.id === 'gulf-commerce'
+                          ? Building2
                           : section.id === 'healthcare'
                           ? HeartPulse
-                          : section.id === 'dubai-hub'
-                          ? Building2
-                          : section.id === 'fintech-web3'
-                          ? Coins
-                          : Globe;
+                          : section.id === 'gaming'
+                          ? Gamepad2
+                          : Sparkles;
 
                       return (
                         <div

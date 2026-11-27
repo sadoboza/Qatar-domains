@@ -151,9 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 max-w-md font-medium">
-              {isAr
-                ? 'منصة لعرض واقتناء نخبة النطاقات القطرية والعالمية مع تنسيق آمن لنقل الملكية.'
-                : 'Platform showcasing distinctive Qatar & global domain names with coordinated secure transfer.'}
+              {t.footerTagline}
             </p>
           </div>
 
@@ -220,7 +218,7 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
           </p>
           <div className="flex items-center gap-2 text-slate-400">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            <span>{isAr ? 'إجراءات نقل موثوقة ومنسقة بعد الاتفاق وإتمام الصفقة' : 'Secure transfer process coordinated upon agreed transaction'}</span>
+            <span>{t.footerTransferNote}</span>
           </div>
         </div>
       </div>
